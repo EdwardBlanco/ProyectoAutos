@@ -1,0 +1,183 @@
+:root {
+  --brand: #c62828;
+  --ink: #1a2332;
+  --muted: #5c6b7a;
+  --line: #e2e6ea;
+  --paper: #ffffff;
+  --canvas: #f3f5f7;
+  --sidebar: #1a2332;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  color: var(--ink);
+  background: var(--canvas);
+}
+
+body {
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.surface {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.page-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.stat-label {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.status-chip {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.app-table {
+  background: transparent;
+}
+
+.app-table thead tr th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted) !important;
+}
+
+.app-table tbody td {
+  color: var(--ink);
+}
+
+.cell-muted {
+  color: var(--muted);
+}
+
+.empty-copy {
+  color: var(--muted);
+}
+
+.q-header.app-header {
+  background: var(--paper);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.app-header .nav-search {
+  width: min(320px, 46vw);
+}
+
+.app-header .nav-search .q-field__control {
+  background: var(--canvas);
+}
+
+.q-drawer.app-sidebar,
+.q-drawer.app-sidebar .q-drawer__content {
+  background: var(--sidebar) !important;
+  color: #e8edf2;
+}
+
+.app-sidebar .sidebar-section-label {
+  padding: 16px 20px 6px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8899a6;
+}
+
+.app-sidebar .brand-block {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-sidebar .brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--brand);
+}
+
+.app-sidebar .brand-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.app-sidebar .brand-sub {
+  font-size: 0.72rem;
+  color: #9aa8b5;
+}
+
+.app-sidebar .q-item {
+  min-height: 40px;
+  border-radius: 8px;
+  margin: 2px 8px;
+  color: #c5d0da;
+  font-size: 0.875rem;
+}
+
+.app-sidebar .q-item .q-icon {
+  color: #9aa8b5;
+}
+
+.app-sidebar .q-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.app-sidebar .q-item.nav-active,
+.app-sidebar .q-item.nav-active:hover,
+.app-sidebar .q-item.q-router-link--exact-active,
+.app-sidebar .q-item.q-router-link--exact-active:hover {
+  background: rgba(198, 40, 40, 0.22);
+  color: #fff;
+}
+
+.app-sidebar .q-item.nav-active .q-icon,
+.app-sidebar .q-item.q-router-link--exact-active .q-icon {
+  color: #ff8a80;
+}
+
+.q-page-container {
+  background: var(--canvas);
+  color: var(--ink);
+}
