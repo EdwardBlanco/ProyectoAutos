@@ -37,24 +37,38 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import PageHeader from '@/components/PageHeader.vue'
 import StatusChip from '@/components/StatusChip.vue'
-import { ordenes } from '@/data/mock.js'
+import api from '@/services/api'
 
 const filtro = ref('')
+const ordenes = ref([])
 
 const columns = [
-  { name: 'id', label: 'Orden', field: 'id', align: 'left' },
-  { name: 'placa', label: 'Placa', field: 'placa', align: 'left' },
-  { name: 'cliente', label: 'Cliente', field: 'cliente', align: 'left' },
+  { name: 'id', label: 'Orden', field: 'numeroOrden', align: 'left' },
+  { name: 'placa', label: 'Placa', field: row => row.vehiculoId?.placa || 'N/A', align: 'left' },
+  { name: 'cliente', label: 'Cliente', field: row => row.vehiculoId?.clienteId?.nombre || 'N/A', align: 'left' },
   { name: 'estado', label: 'Estado', field: 'estado', align: 'left' },
-  { name: 'fecha', label: 'Fecha', field: 'fecha', align: 'left' }
+  { name: 'fecha', label: 'Fecha', field: row => new Date(row.fechaIngreso).toLocaleDateString(), align: 'left' }
 ]
+
+const fetchOrdenes = async () => {
+  try {
+    const { data } = await api.get('/ordenes')
+    ordenes.value = data
+  } catch (error) {
+    console.error('Error fetching ordenes:', error)
+  }
+}
+
+onMounted(() => {
+  fetchOrdenes()
+})
 
 const filtradas = computed(() => {
   const q = filtro.value.trim().toLowerCase()
-  if (!q) return ordenes
-  return ordenes.filter((o) => `${o.id} ${o.placa} ${o.cliente}`.toLowerCase().includes(q))
+  if (!q) return ordenes.value
+  return ordenes.value.filter((o) => `${o.numeroOrden} ${o.vehiculoId?.placa}`.toLowerCase().includes(q))
 })
 </script>

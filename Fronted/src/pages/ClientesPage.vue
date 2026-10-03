@@ -35,22 +35,36 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import PageHeader from '@/components/PageHeader.vue'
-import { clientes } from '@/data/mock.js'
+import api from '@/services/api'
 
 const filtro = ref('')
+const clientes = ref([])
 
 const columns = [
   { name: 'nombre', label: 'Nombre', field: 'nombre', align: 'left' },
   { name: 'telefono', label: 'Teléfono', field: 'telefono', align: 'left' },
   { name: 'correo', label: 'Correo', field: 'correo', align: 'left' },
-  { name: 'vehiculos', label: 'Vehículos', field: 'vehiculos', align: 'left' }
+  { name: 'vehiculos', label: 'Vehículos', field: row => row.vehiculos?.length || 0, align: 'left' }
 ]
+
+const fetchClientes = async () => {
+  try {
+    const { data } = await api.get('/clientes')
+    clientes.value = data
+  } catch (error) {
+    console.error('Error fetching clientes:', error)
+  }
+}
+
+onMounted(() => {
+  fetchClientes()
+})
 
 const filtrados = computed(() => {
   const q = filtro.value.trim().toLowerCase()
-  if (!q) return clientes
-  return clientes.filter((c) => `${c.nombre} ${c.telefono}`.toLowerCase().includes(q))
+  if (!q) return clientes.value
+  return clientes.value.filter((c) => `${c.nombre} ${c.telefono}`.toLowerCase().includes(q))
 })
 </script>

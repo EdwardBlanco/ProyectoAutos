@@ -120,111 +120,114 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import PageHeader from '@/components/PageHeader.vue'
+import api from '@/services/api'
 
 const periodo = ref('mes')
 
-// Datos dinámicos según el período seleccionado
-const dataset = {
-  semana: {
-    ingresos: '$3,420',
-    ingresosTrend: 8.5,
-    ordenes: '14',
-    ordenesTrend: 4.2,
-    clientes: '8',
-    clientesTrend: 12.0,
-    vehiculos: '12',
-    vehiculosTrend: -2.1,
-    estados: [
-      { label: 'Completadas', count: 8, percentage: 57, color: 'positive' },
-      { label: 'En Proceso', count: 4, percentage: 29, color: 'warning' },
-      { label: 'Pendientes', count: 2, percentage: 14, color: 'negative' }
-    ],
-    servicios: [
-      { nombre: 'Mantenimiento', porcentaje: 45, color: 'primary' },
-      { nombre: 'Frenos', porcentaje: 30, color: 'teal' },
-      { nombre: 'Motor', porcentaje: 25, color: 'orange' }
-    ]
-  },
-  mes: {
-    ingresos: '$14,850',
-    ingresosTrend: 12.3,
-    ordenes: '58',
-    ordenesTrend: 6.8,
-    clientes: '32',
-    clientesTrend: 15.4,
-    vehiculos: '45',
-    vehiculosTrend: 9.1,
-    estados: [
-      { label: 'Completadas', count: 38, percentage: 65, color: 'positive' },
-      { label: 'En Proceso', count: 14, percentage: 24, color: 'warning' },
-      { label: 'Pendientes', count: 6, percentage: 11, color: 'negative' }
-    ],
-    servicios: [
-      { nombre: 'Mantenimiento', porcentaje: 40, color: 'primary' },
-      { nombre: 'Frenos', porcentaje: 35, color: 'teal' },
-      { nombre: 'Motor', porcentaje: 25, color: 'orange' }
-    ]
-  },
-  anio: {
-    ingresos: '$168,200',
-    ingresosTrend: 21.0,
-    ordenes: '640',
-    ordenesTrend: 18.5,
-    clientes: '210',
-    clientesTrend: 24.1,
-    vehiculos: '310',
-    vehiculosTrend: 16.3,
-    estados: [
-      { label: 'Completadas', count: 520, percentage: 81, color: 'positive' },
-      { label: 'En Proceso', count: 80, percentage: 13, color: 'warning' },
-      { label: 'Pendientes', count: 40, percentage: 6, color: 'negative' }
-    ],
-    servicios: [
-      { nombre: 'Mantenimiento', porcentaje: 50, color: 'primary' },
-      { nombre: 'Frenos', porcentaje: 28, color: 'teal' },
-      { nombre: 'Motor', porcentaje: 22, color: 'orange' }
-    ]
+// Fetch data state
+const clientesCount = ref(0)
+const vehiculosCount = ref(0)
+const ordenesActivas = ref(0)
+const ordenesData = ref([])
+
+const fetchData = async () => {
+  try {
+    const [clientesRes, vehiculosRes, ordenesRes] = await Promise.all([
+      api.get('/clientes'),
+      api.get('/vehiculos'),
+      api.get('/ordenes')
+    ])
+    clientesCount.value = clientesRes.data.length
+    vehiculosCount.value = vehiculosRes.data.length
+    ordenesData.value = ordenesRes.data
+    ordenesActivas.value = ordenesRes.data.filter(o => !['Listo', 'Entregado'].includes(o.estado)).length
+  } catch (error) {
+    console.error('Error fetching dashboard data:', error)
   }
 }
 
-// Métricas computadas dinámicamente al cambiar el botón de período
+onMounted(() => {
+  fetchData()
+})
+
+const totalIngresosMock = computed(() => {
+  if (periodo.value === 'semana') return '$3,420'
+  if (periodo.value === 'mes') return '$14,850'
+  return '$168,200'
+})
+
+const dataset = computed(() => {
+  const baseData = {
+    ingresos: totalIngresosMock.value,
+    ingresosTrend: 12.3,
+    ordenes: ordenesActivas.value.toString(),
+    ordenesTrend: 6.8,
+    clientes: clientesCount.value.toString(),
+    clientesTrend: 15.4,
+    vehiculos: vehiculosCount.value.toString(),
+    vehiculosTrend: 9.1
+  }
+  return baseData
+})
+
+const computedEstados = computed(() => {
+  const total = ordenesData.value.length || 1
+  const completadas = ordenesData.value.filter(o => ['Listo', 'Entregado'].includes(o.estado)).length
+  const enProceso = ordenesData.value.filter(o => ['En diagnóstico', 'En reparación'].includes(o.estado)).length
+  const pendientes = 0 // If we don't have this explicit state in schema, let's keep it 0 or adapt.
+  
+  return [
+    { label: 'Completadas', count: completadas, percentage: Math.round((completadas/total)*100), color: 'positive' },
+    { label: 'En Proceso', count: enProceso, percentage: Math.round((enProceso/total)*100), color: 'warning' },
+    { label: 'Pendientes', count: pendientes, percentage: Math.round((pendientes/total)*100), color: 'negative' }
+  ]
+})
+
+const computedServicios = computed(() => {
+  return [
+    { nombre: 'Mantenimiento', porcentaje: 40, color: 'primary' },
+    { nombre: 'Frenos', porcentaje: 35, color: 'teal' },
+    { nombre: 'Motor', porcentaje: 25, color: 'orange' }
+  ]
+})
+
 const metrics = computed(() => [
   {
     title: 'Ingresos',
-    value: dataset[periodo.value].ingresos,
-    trend: dataset[periodo.value].ingresosTrend,
+    value: dataset.value.ingresos,
+    trend: dataset.value.ingresosTrend,
     icon: 'attach_money',
     color: 'green-8',
     colorLight: 'green-1'
   },
   {
     title: 'Órdenes Activas',
-    value: dataset[periodo.value].ordenes,
-    trend: dataset[periodo.value].ordenesTrend,
+    value: dataset.value.ordenes,
+    trend: dataset.value.ordenesTrend,
     icon: 'assignment',
     color: 'blue-8',
     colorLight: 'blue-1'
   },
   {
     title: 'Nuevos Clientes',
-    value: dataset[periodo.value].clientes,
-    trend: dataset[periodo.value].clientesTrend,
+    value: dataset.value.clientes,
+    trend: dataset.value.clientesTrend,
     icon: 'person_add',
     color: 'purple-8',
     colorLight: 'purple-1'
   },
   {
     title: 'Vehículos Atendidos',
-    value: dataset[periodo.value].vehiculos,
-    trend: dataset[periodo.value].vehiculosTrend,
+    value: dataset.value.vehiculos,
+    trend: dataset.value.vehiculosTrend,
     icon: 'directions_car',
     color: 'orange-8',
     colorLight: 'orange-1'
   }
 ])
 
-const estadoOrdenesData = computed(() => dataset[periodo.value].estados)
-const serviciosData = computed(() => dataset[periodo.value].servicios)
+const estadoOrdenesData = computed(() => computedEstados.value)
+const serviciosData = computed(() => computedServicios.value)
 </script>

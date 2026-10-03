@@ -35,23 +35,37 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import PageHeader from '@/components/PageHeader.vue'
-import { vehiculos } from '@/data/mock.js'
+import api from '@/services/api'
 
 const filtro = ref('')
+const vehiculos = ref([])
 
 const columns = [
   { name: 'placa', label: 'Placa', field: 'placa', align: 'left' },
   { name: 'marca', label: 'Marca', field: 'marca', align: 'left' },
   { name: 'modelo', label: 'Modelo', field: 'modelo', align: 'left' },
-  { name: 'anio', label: 'Año', field: 'anio', align: 'left' },
-  { name: 'cliente', label: 'Propietario', field: 'cliente', align: 'left' }
+  { name: 'anio', label: 'Año', field: 'año', align: 'left' },
+  { name: 'cliente', label: 'Propietario', field: row => row.clienteId?.nombre || 'N/A', align: 'left' }
 ]
+
+const fetchVehiculos = async () => {
+  try {
+    const { data } = await api.get('/vehiculos')
+    vehiculos.value = data
+  } catch (error) {
+    console.error('Error fetching vehiculos:', error)
+  }
+}
+
+onMounted(() => {
+  fetchVehiculos()
+})
 
 const filtrados = computed(() => {
   const q = filtro.value.trim().toLowerCase()
-  if (!q) return vehiculos
-  return vehiculos.filter((v) => `${v.placa} ${v.marca} ${v.modelo}`.toLowerCase().includes(q))
+  if (!q) return vehiculos.value
+  return vehiculos.value.filter((v) => `${v.placa} ${v.marca} ${v.modelo}`.toLowerCase().includes(q))
 })
 </script>

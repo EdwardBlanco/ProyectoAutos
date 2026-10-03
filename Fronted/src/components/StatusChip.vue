@@ -15,10 +15,10 @@ const props = defineProps({
 })
 
 const map = {
-  Diagnóstico: { color: 'blue-1', text: 'blue-9' },
-  Reparación: { color: 'orange-1', text: 'orange-10' },
-  Listo: { color: 'green-1', text: 'green-9' },
-  Entregado: { color: 'grey-3', text: 'grey-8' }
+  'En diagnóstico': { color: 'blue-1', text: 'blue-9' },
+  'En reparación': { color: 'orange-1', text: 'orange-10' },
+  'Listo': { color: 'green-1', text: 'green-9' },
+  'Entregado': { color: 'grey-3', text: 'grey-8' }
 }
 
 const tone = computed(() => map[props.estado] || { color: 'grey-3', text: 'grey-8' })

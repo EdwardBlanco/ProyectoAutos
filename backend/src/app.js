@@ -10,7 +10,22 @@ const ordenRoutes = require('./routes/orden.routes');
 const app = express();
 
 // Middlewares
-app.use(cors());
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://proyecto-autos-six.vercel.app',
+  'https://proyecto-autos-3g5a98ys5-edwards-projects-edd89680.vercel.app'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes
