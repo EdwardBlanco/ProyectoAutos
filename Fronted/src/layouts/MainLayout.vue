@@ -66,19 +66,32 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
-import { ordenes } from '@/data/mock.js'
+import { computed, ref, onMounted } from 'vue'
+import api from '@/services/api'
 
 const drawer = ref(true)
+const ordenesActivas = ref(0)
 
-// Órdenes que todavía no se entregaron
-const ordenesActivas = computed(() => ordenes.filter((o) => o.estado !== 'Entregado').length)
+const fetchOrdenesActivas = async () => {
+  try {
+    const { data } = await api.get('/ordenes')
+    // Contar las que no estén entregadas
+    ordenesActivas.value = data.filter((o) => o.estado !== 'Entregado').length
+  } catch (error) {
+    console.error('Error fetching ordenes activas:', error)
+  }
+}
+
+onMounted(() => {
+  fetchOrdenesActivas()
+})
 
 const menu = computed(() => [
   { label: 'Dashboard', icon: 'dashboard', to: '/dashboard' },
   { label: 'Clientes', icon: 'groups', to: '/clientes' },
   { label: 'Vehículos', icon: 'directions_car', to: '/vehiculos' },
-  { label: 'Órdenes', icon: 'assignment', to: '/ordenes', badge: ordenesActivas.value },
+  { label: 'Mecánicos', icon: 'engineering', to: '/mecanicos' },
+  { label: 'Órdenes', icon: 'assignment', to: '/ordenes', badge: ordenesActivas.value || null },
   { label: 'Expedientes', icon: 'folder_open', to: '/expedientes' },
   { label: 'Configuración', icon: 'settings', to: '/configuracion' }
 ])

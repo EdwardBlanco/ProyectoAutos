@@ -10,6 +10,7 @@ const routes = [
       { path: 'dashboard', name: 'dashboard', component: () => import('@/pages/DashboardPage.vue') },
       { path: 'clientes', name: 'clientes', component: () => import('@/pages/ClientesPage.vue') },
       { path: 'vehiculos', name: 'vehiculos', component: () => import('@/pages/VehiculosPage.vue') },
+      { path: 'mecanicos', name: 'mecanicos', component: () => import('@/pages/MecanicosPage.vue') },
       { path: 'ordenes', name: 'ordenes', component: () => import('@/pages/OrdenesPage.vue') },
       { path: 'expedientes', name: 'expedientes', component: () => import('@/pages/ExpedientesPage.vue') },
       { path: 'configuracion', name: 'configuracion', component: () => import('@/pages/ConfiguracionPage.vue') }

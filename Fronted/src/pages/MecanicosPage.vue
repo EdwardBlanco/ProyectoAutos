@@ -1,15 +1,15 @@
 <template>
   <q-page class="q-pa-lg">
     <div class="page-shell">
-      <PageHeader title="Clientes" subtitle="Directorio de propietarios">
+      <PageHeader title="Mecánicos" subtitle="Personal del taller">
         <template #actions>
-          <q-btn unelevated color="primary" label="Nuevo cliente" icon="add" no-caps @click="openDialog()" />
+          <q-btn unelevated color="primary" label="Nuevo mecánico" icon="add" no-caps @click="openDialog()" />
         </template>
       </PageHeader>
 
       <div class="surface">
         <div class="q-pa-md">
-          <q-input v-model="filtro" dense outlined placeholder="Buscar por nombre o teléfono" color="primary">
+          <q-input v-model="filtro" dense outlined placeholder="Buscar por nombre o especialidad" color="primary">
             <template #prepend><q-icon name="search" color="grey-6" /></template>
           </q-input>
         </div>
@@ -22,17 +22,14 @@
           hide-pagination
           :pagination="{ rowsPerPage: 0 }"
         >
-          <template #body-cell-correo="props">
-            <q-td :props="props" class="cell-muted">{{ props.row.correo }}</q-td>
-          </template>
           <template #body-cell-acciones="props">
             <q-td :props="props" class="text-right">
               <q-btn flat round color="primary" icon="edit" size="sm" @click="openDialog(props.row)" />
-              <q-btn flat round color="negative" icon="delete" size="sm" @click="deleteCliente(props.row._id)" />
+              <q-btn flat round color="negative" icon="delete" size="sm" @click="deleteMecanico(props.row._id)" />
             </q-td>
           </template>
           <template #no-data>
-            <div class="full-width q-pa-lg text-center empty-copy">No hay clientes que coincidan.</div>
+            <div class="full-width q-pa-lg text-center empty-copy">No hay mecánicos que coincidan.</div>
           </template>
         </q-table>
       </div>
@@ -42,17 +39,16 @@
     <q-dialog v-model="dialog" persistent>
       <q-card style="min-width: 400px; border-radius: 12px;">
         <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6">{{ form._id ? 'Editar Cliente' : 'Nuevo Cliente' }}</div>
+          <div class="text-h6">{{ form._id ? 'Editar Mecánico' : 'Nuevo Mecánico' }}</div>
           <q-space />
           <q-btn icon="close" flat round dense v-close-popup />
         </q-card-section>
 
         <q-card-section class="q-pt-md">
-          <q-form @submit="saveCliente" class="q-gutter-md">
+          <q-form @submit="saveMecanico" class="q-gutter-md">
             <q-input v-model="form.nombre" label="Nombre completo *" outlined dense :rules="[val => !!val || 'El nombre es requerido']" />
+            <q-input v-model="form.especialidad" label="Especialidad *" outlined dense :rules="[val => !!val || 'La especialidad es requerida']" />
             <q-input v-model="form.telefono" label="Teléfono *" outlined dense :rules="[val => !!val || 'El teléfono es requerido']" />
-            <q-input v-model="form.correo" type="email" label="Correo electrónico *" outlined dense :rules="[val => !!val || 'El correo es requerido']" />
-            <q-input v-model="form.direccion" label="Dirección" outlined dense autogrow />
             
             <div class="row justify-end q-mt-md">
               <q-btn label="Cancelar" color="grey-6" flat v-close-popup />
@@ -73,89 +69,87 @@ import api from '@/services/api'
 
 const $q = useQuasar()
 const filtro = ref('')
-const clientes = ref([])
+const mecanicos = ref([])
 const dialog = ref(false)
 const saving = ref(false)
 
 const form = ref({
   _id: null,
   nombre: '',
-  telefono: '',
-  correo: '',
-  direccion: ''
+  especialidad: '',
+  telefono: ''
 })
 
 const columns = [
   { name: 'nombre', label: 'Nombre', field: 'nombre', align: 'left' },
+  { name: 'especialidad', label: 'Especialidad', field: 'especialidad', align: 'left' },
   { name: 'telefono', label: 'Teléfono', field: 'telefono', align: 'left' },
-  { name: 'correo', label: 'Correo', field: 'correo', align: 'left' },
-  { name: 'vehiculos', label: 'Vehículos', field: row => row.vehiculos?.length || 0, align: 'left' },
   { name: 'acciones', label: '', field: 'acciones', align: 'right' }
 ]
 
-const fetchClientes = async () => {
+const fetchMecanicos = async () => {
   try {
-    const { data } = await api.get('/clientes')
-    clientes.value = data
+    const { data } = await api.get('/mecanicos')
+    mecanicos.value = data
   } catch (error) {
-    console.error('Error fetching clientes:', error)
-    $q.notify({ type: 'negative', message: 'Error al cargar clientes' })
+    console.error('Error fetching mecanicos:', error)
+    $q.notify({ type: 'negative', message: 'Error al cargar mecánicos' })
   }
 }
 
 onMounted(() => {
-  fetchClientes()
+  fetchMecanicos()
 })
 
 const filtrados = computed(() => {
   const q = filtro.value.trim().toLowerCase()
-  if (!q) return clientes.value
-  return clientes.value.filter((c) => `${c.nombre} ${c.telefono}`.toLowerCase().includes(q))
+  if (!q) return mecanicos.value
+  return mecanicos.value.filter((m) => `${m.nombre} ${m.especialidad}`.toLowerCase().includes(q))
 })
 
-const openDialog = (cliente = null) => {
-  if (cliente) {
-    form.value = { ...cliente }
+const openDialog = (mecanico = null) => {
+  if (mecanico) {
+    form.value = { ...mecanico }
   } else {
-    form.value = { _id: null, nombre: '', telefono: '', correo: '', direccion: '' }
+    form.value = { _id: null, nombre: '', especialidad: '', telefono: '' }
   }
   dialog.value = true
 }
 
-const saveCliente = async () => {
+const saveMecanico = async () => {
   saving.value = true
   try {
     if (form.value._id) {
-      await api.put(`/clientes/${form.value._id}`, form.value)
-      $q.notify({ type: 'positive', message: 'Cliente actualizado' })
+      await api.put(`/mecanicos/${form.value._id}`, form.value)
+      $q.notify({ type: 'positive', message: 'Mecánico actualizado' })
     } else {
-      await api.post('/clientes', form.value)
-      $q.notify({ type: 'positive', message: 'Cliente registrado' })
+      await api.post('/mecanicos', form.value)
+      $q.notify({ type: 'positive', message: 'Mecánico registrado' })
     }
     dialog.value = false
-    fetchClientes()
+    fetchMecanicos()
   } catch (error) {
-    console.error('Error saving cliente:', error)
-    $q.notify({ type: 'negative', message: 'Error al guardar el cliente' })
+    console.error('Error saving mecanico:', error)
+    $q.notify({ type: 'negative', message: 'Error al guardar el mecánico' })
   } finally {
     saving.value = false
   }
 }
 
-const deleteCliente = (id) => {
+const deleteMecanico = (id) => {
   $q.dialog({
     title: 'Confirmar',
-    message: '¿Estás seguro de eliminar este cliente?',
+    message: '¿Estás seguro de eliminar este mecánico?',
     cancel: true,
     persistent: true
   }).onOk(async () => {
     try {
-      await api.delete(`/clientes/${id}`)
-      $q.notify({ type: 'positive', message: 'Cliente eliminado' })
-      fetchClientes()
+      await api.delete(`/mecanicos/${id}`)
+      $q.notify({ type: 'positive', message: 'Mecánico eliminado' })
+      fetchMecanicos()
     } catch (error) {
-      console.error('Error deleting cliente:', error)
-      $q.notify({ type: 'negative', message: 'Error al eliminar cliente' })
+      console.error('Error deleting mecanico:', error)
+      $q.notify({ type: 'negative', message: 'Error al eliminar mecánico' })
     }
   })
 }
