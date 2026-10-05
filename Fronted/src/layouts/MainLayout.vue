@@ -17,6 +17,7 @@
         <q-btn flat round icon="notifications" color="secondary" aria-label="Notificaciones">
           <q-badge v-if="ordenesActivas" floating color="primary" :label="ordenesActivas" />
         </q-btn>
+        <q-btn flat round icon="logout" color="secondary" aria-label="Cerrar sesión" @click="logout" />
       </q-toolbar>
     </q-header>
 
@@ -67,10 +68,17 @@
 
 <script setup>
 import { computed, ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import api from '@/services/api'
 
 const drawer = ref(true)
 const ordenesActivas = ref(0)
+const router = useRouter()
+
+const logout = () => {
+  localStorage.removeItem('token')
+  router.push('/login')
+}
 
 const fetchOrdenesActivas = async () => {
   try {
