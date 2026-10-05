@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const apiURL = (typeof import.meta !== 'undefined' && import.meta.env) ? import.meta.env.VITE_API_URL : 'https://proyecto-autos-six.vercel.app/api';
+const apiURL = (typeof import.meta !== 'undefined' && import.meta.env) ? import.meta.env.VITE_API_URL : 'http://localhost:3000/api';
 
 const api = axios.create({
-  baseURL: apiURL || 'https://proyecto-autos-six.vercel.app/api',
+  baseURL: apiURL || 'http://localhost:3000/api',
   headers: {
     'Content-Type': 'application/json'
   }
