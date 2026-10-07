@@ -1,61 +1,129 @@
 <template>
-  <q-layout view="hHh LpR lFf">
-    <q-header class="app-header">
-      <q-toolbar class="q-px-md">
+  <!-- layout view con prioridad para el drawer lateral -->
+  <q-layout view="hHh lpR fFf">
+    <!-- BARRA SUPERIOR NEGRA -->
+    <q-header elevated class="bg-black text-white">
+      <q-toolbar>
         <q-btn
           flat
           dense
           round
           icon="menu"
-          color="secondary"
-          aria-label="Menú"
-          @click="drawer = !drawer"
+          aria-label="Menu"
+          @click="toggleLeftDrawer"
+          class="menu-btn-hover"
         />
 
+        <q-toolbar-title class="text-weight-bold">
+          Taller Autos
+        </q-toolbar-title>
+
+        <!-- ESPACIADOR -->
         <q-space />
 
-        <q-btn flat round icon="notifications" color="secondary" aria-label="Notificaciones">
-          <q-badge v-if="ordenesActivas" floating color="primary" :label="ordenesActivas" />
-        </q-btn>
-        <q-btn flat round icon="logout" color="secondary" aria-label="Cerrar sesión" @click="logout" />
+        <!-- MENÚ / BOTÓN DE ADMINISTRADOR -->
+        <q-btn-dropdown
+          flat
+          no-caps
+          class="menu-btn-hover"
+        >
+          <template v-slot:label>
+            <div class="row items-center no-wrap">
+              <q-avatar size="28px" class="q-mr-sm bg-negative text-white">
+                <q-icon name="person" size="18px" />
+              </q-avatar>
+              <span class="text-weight-medium">Administrador</span>
+            </div>
+          </template>
+
+          <q-list dark style="min-width: 180px;" class="bg-grey-10">
+            <q-item clickable v-close-popup @click="logout" class="text-negative">
+              <q-item-section avatar>
+                <q-icon name="logout" color="negative" />
+              </q-item-section>
+              <q-item-section class="text-weight-bold">Cerrar Sesión</q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
       </q-toolbar>
     </q-header>
 
+    <!-- MENÚ LATERAL NEGRO DE 295px DE ANCHO -->
     <q-drawer
-      v-model="drawer"
+      v-model="leftDrawerOpen"
       show-if-above
-      :width="236"
-      :breakpoint="900"
-      class="app-sidebar"
+      bordered
+      :width="295"
+      class="bg-black text-white"
     >
-      <div class="row items-center no-wrap q-pa-md brand-block">
-        <div class="brand-mark flex flex-center">
-          <q-icon name="build" color="white" size="20px" />
-        </div>
-        <div class="q-ml-sm">
-          <div class="brand-title">Taller</div>
-          <div class="brand-sub">Gestión v2.4</div>
-        </div>
-      </div>
+      <q-list dark padding class="rounded-borders">
+        <q-item-label header class="text-grey-6 text-uppercase text-weight-bold">
+          Navegación
+        </q-item-label>
 
-      <div class="sidebar-section-label">Navegación taller</div>
-
-      <q-list>
         <q-item
-          v-for="item in menu"
-          :key="item.to"
           clickable
           v-ripple
-          :to="item.to"
-          active-class="nav-active"
+          to="/dashboard"
+          active-class="active-menu-item"
+          class="custom-menu-item"
         >
           <q-item-section avatar>
-            <q-icon :name="item.icon" size="20px" />
+            <q-icon name="dashboard" />
           </q-item-section>
-          <q-item-section>{{ item.label }}</q-item-section>
-          <q-item-section v-if="item.badge" side>
-            <q-badge color="primary" :label="item.badge" />
+          <q-item-section>Dashboard</q-item-section>
+        </q-item>
+
+        <q-item
+          clickable
+          v-ripple
+          to="/mecanicos"
+          active-class="active-menu-item"
+          class="custom-menu-item"
+        >
+          <q-item-section avatar>
+            <q-icon name="engineering" />
           </q-item-section>
+          <q-item-section>Mecánicos</q-item-section>
+        </q-item>
+
+        <q-item
+          clickable
+          v-ripple
+          to="/clientes"
+          active-class="active-menu-item"
+          class="custom-menu-item"
+        >
+          <q-item-section avatar>
+            <q-icon name="people" />
+          </q-item-section>
+          <q-item-section>Clientes</q-item-section>
+        </q-item>
+
+        <q-item
+          clickable
+          v-ripple
+          to="/vehiculos"
+          active-class="active-menu-item"
+          class="custom-menu-item"
+        >
+          <q-item-section avatar>
+            <q-icon name="directions_car" />
+          </q-item-section>
+          <q-item-section>Vehículos</q-item-section>
+        </q-item>
+
+        <q-item
+          clickable
+          v-ripple
+          to="/ordenes"
+          active-class="active-menu-item"
+          class="custom-menu-item"
+        >
+          <q-item-section avatar>
+            <q-icon name="assignment" />
+          </q-item-section>
+          <q-item-section>Órdenes</q-item-section>
         </q-item>
       </q-list>
     </q-drawer>
@@ -67,40 +135,53 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import api from '@/services/api'
+import { useQuasar } from 'quasar'
 
-const drawer = ref(true)
-const ordenesActivas = ref(0)
+const leftDrawerOpen = ref(false)
 const router = useRouter()
+const $q = useQuasar()
 
-const logout = () => {
+function toggleLeftDrawer () {
+  leftDrawerOpen.value = !leftDrawerOpen.value
+}
+
+function logout () {
   localStorage.removeItem('token')
+  
+  $q.notify({
+    type: 'info',
+    message: 'Sesión cerrada'
+  })
+
   router.push('/login')
 }
+</script>
 
-const fetchOrdenesActivas = async () => {
-  try {
-    const { data } = await api.get('/ordenes')
-    // Contar las que no estén entregadas
-    ordenesActivas.value = data.filter((o) => o.estado !== 'Entregado').length
-  } catch (error) {
-    console.error('Error fetching ordenes activas:', error)
-  }
+<style scoped>
+/* Estilo base para los elementos del menú */
+.custom-menu-item {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-left: 4px solid transparent;
 }
 
-onMounted(() => {
-  fetchOrdenesActivas()
-})
+/* Hover rojo al pasar el cursor sobre los ítems del menú */
+.custom-menu-item:hover {
+  background-color: #c62828 !important; /* Rojo */
+  color: #ffffff !important;
+}
 
-const menu = computed(() => [
-  { label: 'Dashboard', icon: 'dashboard', to: '/dashboard' },
-  { label: 'Clientes', icon: 'groups', to: '/clientes' },
-  { label: 'Vehículos', icon: 'directions_car', to: '/vehiculos' },
-  { label: 'Mecánicos', icon: 'engineering', to: '/mecanicos' },
-  { label: 'Órdenes', icon: 'assignment', to: '/ordenes', badge: ordenesActivas.value || null },
-  { label: 'Expedientes', icon: 'folder_open', to: '/expedientes' },
-  { label: 'Configuración', icon: 'settings', to: '/configuracion' }
-])
-</script>
+/* Estado ACTIVO (Sección actual) */
+.active-menu-item {
+  background-color: #b71c1c !important; /* Rojo oscuro */
+  color: #ffffff !important;
+  border-left: 4px solid #ffffff;
+  font-weight: bold;
+}
+
+/* Hover para los botones en la barra superior */
+.menu-btn-hover:hover {
+  background-color: rgba(198, 40, 40, 0.4) !important;
+}
+</style>
