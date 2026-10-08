@@ -26,7 +26,6 @@
               flat
               bordered
               class="contact-card q-pa-sm relative-position bg-white"
-              :class="{ 'card-selected': selectedVehiculos.includes(vehiculo._id) }"
             >
               <!-- Fila Superior: Icono Vehículo + Info Placa/Marca + Menú (...) -->
               <div class="row items-center justify-between no-wrap q-mb-sm">
@@ -67,20 +66,18 @@
                 </q-btn>
               </div>
 
-              <!-- Fila Inferior: Propietario / VIN + Checkbox -->
+              <!-- Fila Inferior: Propietario / VIN -->
               <div class="row items-center justify-between q-mt-xs">
                 <div class="row items-center q-gutter-xs">
                   <q-chip dense flat class="bg-grey-2 text-grey-8 text-caption">
                     <q-icon name="person" size="14px" color="negative" class="q-mr-xs" />
-                    {{ getPropietarioNombre(vehiculo.cliente) }}
+                    {{ getPropietarioNombre(vehiculo.clienteId) }}
                   </q-chip>
 
                   <q-chip v-if="vehiculo.vin" dense flat class="bg-red-1 text-negative text-caption text-bold">
                     VIN: {{ vehiculo.vin }}
                   </q-chip>
                 </div>
-
-                <q-checkbox v-model="selectedVehiculos" :val="vehiculo._id" dense size="xs" color="primary" />
               </div>
             </q-card>
           </div>
@@ -191,7 +188,7 @@
               <!-- Propietario (Cliente) -->
               <div class="col-12 col-sm-6">
                 <q-select
-                  v-model="form.cliente"
+                  v-model="form.clienteId"
                   label="Propietario *"
                   outlined
                   dense
@@ -230,7 +227,6 @@ const $q = useQuasar()
 const filtro = ref('')
 const vehiculos = ref([])
 const clientesOpciones = ref([])
-const selectedVehiculos = ref([])
 const dialog = ref(false)
 const saving = ref(false)
 
@@ -241,7 +237,7 @@ const form = ref({
   modelo: '',
   anio: new Date().getFullYear(),
   vin: '',
-  cliente: null
+  clienteId: null
 })
 
 const fetchVehiculos = async () => {
@@ -279,7 +275,7 @@ const filtrados = computed(() => {
   const q = filtro.value.trim().toLowerCase()
   if (!q) return vehiculos.value
   return vehiculos.value.filter((v) => {
-    const propNombre = getPropietarioNombre(v.cliente).toLowerCase()
+    const propNombre = getPropietarioNombre(v.clienteId).toLowerCase()
     return `${v.placa} ${v.marca} ${v.modelo} ${v.vin || ''} ${propNombre}`.toLowerCase().includes(q)
   })
 })
@@ -288,7 +284,7 @@ const openDialog = (vehiculo = null) => {
   if (vehiculo) {
     form.value = { 
       ...vehiculo, 
-      cliente: typeof vehiculo.cliente === 'object' ? vehiculo.cliente?._id : vehiculo.cliente 
+      clienteId: typeof vehiculo.clienteId === 'object' ? vehiculo.clienteId?._id : vehiculo.clienteId 
     }
   } else {
     form.value = {
@@ -298,7 +294,7 @@ const openDialog = (vehiculo = null) => {
       modelo: '',
       anio: new Date().getFullYear(),
       vin: '',
-      cliente: null
+      clienteId: null
     }
   }
   dialog.value = true
@@ -353,11 +349,6 @@ const deleteVehiculo = (id) => {
 .contact-card:hover {
   border-color: #bdbdbd;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.card-selected {
-  background-color: #e3f2fd !important;
-  border-color: #90caf9 !important;
 }
 
 .min-icon-sec {

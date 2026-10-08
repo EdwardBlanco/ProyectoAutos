@@ -4,7 +4,7 @@ const vehiculoSchema = new mongoose.Schema({
   placa: { type: String, required: true, unique: true },
   marca: { type: String, required: true },
   modelo: { type: String, required: true },
-  año: { type: Number, required: true },
+  anio: { type: Number, required: true },
   vin: { type: String },
   clienteId: { type: mongoose.Schema.Types.ObjectId, ref: 'Cliente', required: true }
 }, { timestamps: true });

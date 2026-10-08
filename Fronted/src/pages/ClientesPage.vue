@@ -26,7 +26,6 @@
               flat
               bordered
               class="contact-card q-pa-sm relative-position bg-white"
-              :class="{ 'card-selected': selectedClientes.includes(cliente._id) }"
             >
               <!-- Fila Superior: Avatar + Info + Menú (...) -->
               <div class="row items-center justify-between no-wrap q-mb-sm">
@@ -82,9 +81,6 @@
                     {{ cliente.vehiculos?.length || 0 }} veh
                   </q-chip>
                 </div>
-
-                <!-- Checkbox lateral derecho -->
-                <q-checkbox v-model="selectedClientes" :val="cliente._id" dense size="xs" color="primary" />
               </div>
             </q-card>
           </div>
@@ -220,7 +216,6 @@ const $q = useQuasar()
 const filtro = ref('')
 const clientes = ref([])
 const vehiculosOpciones = ref([])
-const selectedClientes = ref([])
 const dialog = ref(false)
 const saving = ref(false)
 
@@ -245,26 +240,25 @@ const getInitials = (nombre) => {
 
 const fetchClientes = async () => {
   try {
-    const { data } = await api.get('/clientes')
-    clientes.value = data
+    const [resClientes, resVehiculos] = await Promise.all([
+      api.get('/clientes'),
+      api.get('/vehiculos')
+    ])
+    vehiculosOpciones.value = resVehiculos.data
+    clientes.value = resClientes.data.map(c => {
+      c.vehiculos = resVehiculos.data
+        .filter(v => (v.clienteId?._id || v.clienteId) === c._id)
+        .map(v => v._id)
+      return c
+    })
   } catch (error) {
     console.error('Error fetching clientes:', error)
     $q.notify({ type: 'negative', message: 'Error al cargar los clientes' })
   }
 }
 
-const fetchVehiculos = async () => {
-  try {
-    const { data } = await api.get('/vehiculos')
-    vehiculosOpciones.value = data
-  } catch (error) {
-    console.error('Error fetching vehiculos:', error)
-  }
-}
-
 onMounted(() => {
   fetchClientes()
-  fetchVehiculos()
 })
 
 const filtrados = computed(() => {
@@ -336,11 +330,6 @@ const deleteCliente = (id) => {
 .contact-card:hover {
   border-color: #bdbdbd;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.card-selected {
-  background-color: #e3f2fd !important;
-  border-color: #90caf9 !important;
 }
 
 .min-icon-sec {

@@ -5,12 +5,16 @@ const crearMecanicoValidator = [
   check('nombre').isLength({ min: 2, max: 60 }).withMessage('El nombre debe tener entre 2 y 60 caracteres'),
   check('especialidad', 'La especialidad es obligatoria').not().isEmpty(),
   check('telefono', 'El teléfono es obligatorio').not().isEmpty(),
+  check('cedula', 'La cédula es obligatoria').not().isEmpty(),
+  check('correo', 'El correo es obligatorio y debe ser válido').isEmail(),
 ];
 
 const actualizarMecanicoValidator = [
   check('nombre', 'El nombre debe tener entre 2 y 60 caracteres').optional().isLength({ min: 2, max: 60 }),
   check('especialidad').optional().isString(),
-  check('telefono').optional().isString()
+  check('telefono').optional().isString(),
+  check('cedula').optional().isString(),
+  check('correo').optional().isEmail()
 ];
 
 const idMecanicoValidator = [

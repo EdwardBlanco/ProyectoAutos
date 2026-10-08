@@ -26,7 +26,6 @@
               flat
               bordered
               class="contact-card q-pa-sm relative-position bg-white column justify-between fit"
-              :class="{ 'card-selected': selectedOrdenes.includes(orden._id) }"
             >
               <div>
                 <!-- Fila Superior: N° Orden + StatusChip + Menú (...) -->
@@ -104,8 +103,6 @@
                     Mano de Obra: {{ formatMoneda(orden.costoManoObra) }}
                   </q-chip>
                 </div>
-
-                <q-checkbox v-model="selectedOrdenes" :val="orden._id" dense size="xs" color="primary" />
               </div>
             </q-card>
           </div>
@@ -270,7 +267,6 @@ const filtro = ref('')
 const ordenes = ref([])
 const vehiculosOptions = ref([])
 const mecanicosOptions = ref([])
-const selectedOrdenes = ref([])
 
 const dialog = ref(false)
 const saving = ref(false)
@@ -416,11 +412,6 @@ const deleteOrden = (id) => {
 .contact-card:hover {
   border-color: #bdbdbd;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.card-selected {
-  background-color: #e3f2fd !important;
-  border-color: #90caf9 !important;
 }
 
 .min-icon-sec {

@@ -26,7 +26,6 @@
               flat
               bordered
               class="contact-card q-pa-sm relative-position bg-white"
-              :class="{ 'card-selected': selectedMecanicos.includes(mecanico._id) }"
             >
               <!-- Fila Superior: Avatar + Info + Menú (...) -->
               <div class="row items-center justify-between no-wrap q-mb-sm">
@@ -81,9 +80,6 @@
                     {{ mecanico.especialidad || 'General' }}
                   </q-chip>
                 </div>
-
-                <!-- Checkbox lateral derecho -->
-                <q-checkbox v-model="selectedMecanicos" :val="mecanico._id" dense size="xs" color="primary" />
               </div>
             </q-card>
           </div>
@@ -213,7 +209,6 @@ import api from '@/services/api'
 const $q = useQuasar()
 const filtro = ref('')
 const mecanicos = ref([])
-const selectedMecanicos = ref([])
 const dialog = ref(false)
 const saving = ref(false)
 
@@ -315,11 +310,6 @@ const deleteMecanico = (id) => {
 .contact-card:hover {
   border-color: #bdbdbd;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.card-selected {
-  background-color: #e3f2fd !important;
-  border-color: #90caf9 !important;
 }
 
 .min-icon-sec {
