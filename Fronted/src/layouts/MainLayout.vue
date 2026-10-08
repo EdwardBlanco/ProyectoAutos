@@ -138,6 +138,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
+import { useAuthStore } from '@/stores/auth'
 
 const leftDrawerOpen = ref(false)
 const router = useRouter()
@@ -148,7 +149,8 @@ function toggleLeftDrawer () {
 }
 
 function logout () {
-  localStorage.removeItem('token')
+  const authStore = useAuthStore()
+  authStore.clearToken()
   
   $q.notify({
     type: 'info',

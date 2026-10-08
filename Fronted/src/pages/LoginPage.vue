@@ -60,6 +60,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
 import api from '@/services/api'
+import { useAuthStore } from '@/stores/auth'
 
 const email = ref('')
 const password = ref('')
@@ -75,8 +76,9 @@ const onSubmit = async () => {
       password: password.value
     })
     
-    // Save token
-    localStorage.setItem('token', res.data.token)
+    // Save token using Pinia
+    const authStore = useAuthStore()
+    authStore.setToken(res.data.token)
     
     $q.notify({ type: 'positive', message: 'Sesión iniciada exitosamente' })
     router.push('/dashboard')

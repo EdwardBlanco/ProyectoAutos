@@ -9,14 +9,14 @@ const api = axios.create({
   }
 });
 
+import { useAuthStore } from '../stores/auth';
+
 // Request interceptor to add the token
 api.interceptors.request.use(
   (config) => {
-    if (typeof localStorage !== 'undefined') {
-      const token = localStorage.getItem('token');
-      if (token) {
-        config.headers['x-token'] = token;
-      }
+    const authStore = useAuthStore();
+    if (authStore.token) {
+      config.headers['x-token'] = authStore.token;
     }
     return config;
   },
