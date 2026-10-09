@@ -499,7 +499,7 @@ const onSearch = (val) => {
   searchTimeout = setTimeout(() => loadInitialData(val), 300)
 }
 
-onMounted(() => {
+onMounted(async () => {
   if (route.query.q) {
     search.value = route.query.q
     loadInitialData(route.query.q)
@@ -511,6 +511,14 @@ onMounted(() => {
     openForm()
     if (route.query.clienteId) {
       formData.value.clienteId = route.query.clienteId
+      try {
+        const res = await api.get(`/clientes/${route.query.clienteId}`)
+        if (res.data) {
+          clientesOptions.value = [res.data]
+        }
+      } catch (error) {
+        console.error('Error fetching client details:', error)
+      }
     }
   }
 })

@@ -128,15 +128,16 @@
               </div>
 
               <!-- Quick Info Chips -->
-              <div class="row q-mt-md q-gutter-x-sm">
-                <q-chip dense square color="blue-1" text-color="blue-9" class="q-ma-none font-medium chip-radius">
-                  {{ cliente.vehiculos?.length || 0 }} {{ (cliente.vehiculos?.length === 1) ? 'vehículo' : 'vehículos'
-                  }}
-                </q-chip>
-                <div class="flex items-center text-caption text-grey-8 q-ml-md">
+              <div class="column q-mt-md q-gutter-y-sm">
+                <div>
+                  <q-chip dense square color="blue-1" text-color="blue-9" class="q-ma-none font-medium chip-radius">
+                    {{ cliente.vehiculos?.length || 0 }} {{ (cliente.vehiculos?.length === 1) ? 'vehículo' : 'vehículos' }}
+                  </q-chip>
+                </div>
+                <div class="flex items-center text-caption text-grey-8">
                   <q-icon name="phone" size="14px" class="q-mr-xs text-grey-6" /> {{ cliente.telefono || 'N/A' }}
                 </div>
-                <div class="flex items-center text-caption text-grey-8 q-ml-md ellipsis" style="max-width: 130px;">
+                <div class="flex items-center text-caption text-grey-8 ellipsis">
                   <q-icon name="email" size="14px" class="q-mr-xs text-grey-6" /> {{ cliente.correo || 'N/A' }}
                   <q-tooltip>{{ cliente.correo }}</q-tooltip>
                 </div>

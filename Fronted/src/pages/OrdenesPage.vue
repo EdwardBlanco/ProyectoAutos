@@ -364,6 +364,7 @@ const fetchData = async () => {
     const params = { limit: 100 }
     if (filtroBusqueda.value) params.q = filtroBusqueda.value
     if (filtroEstado.value && filtroEstado.value !== 'Todos') params.estado = filtroEstado.value
+    if (route.query.mecanicoId) params.mecanicoId = route.query.mecanicoId
 
     const { data } = await api.get('/ordenes', { params })
     ordenes.value = data
