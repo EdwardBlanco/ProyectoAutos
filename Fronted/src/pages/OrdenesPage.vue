@@ -177,7 +177,8 @@
                   </div>
 
                   <div class="q-mb-md">
-                    <q-input v-model.number="form.costoManoObra" type="number" prefix="$"
+                    <q-input :model-value="formatInputMoneda(form.costoManoObra)"
+                      @update:model-value="val => form.costoManoObra = unformatMoneda(val)" prefix="$"
                       label="Costo Total / Mano de Obra *" outlined dense
                       :rules="[val => val !== null && val !== '' || 'Requerido']">
                       <template #prepend><q-icon name="attach_money" color="primary" /></template>
@@ -238,7 +239,6 @@
             <div class="text-caption text-grey-9 ellipsis-2-lines q-mb-xs" :title="props.row.descripcionFalla">
               {{ props.row.descripcionFalla }}
             </div>
-            <!-- Si tuvieramos kilometraje: <div class="text-caption text-grey-6 text-italic">Entró con: 35.000 km</div> -->
           </q-td>
         </template>
 
@@ -356,6 +356,19 @@ const newVehicle = ref({ placa: '', marca: '', modelo: '', anio: '', clienteId: 
 const formatMoneda = (valor) => {
   if (valor === null || valor === undefined || isNaN(valor)) return '$ 0'
   return `$ ${Math.round(valor).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}`
+}
+
+const formatInputMoneda = (valor) => {
+  if (valor === null || valor === undefined || valor === '') return ''
+  const numStr = valor.toString().replace(/\D/g, '')
+  if (!numStr) return ''
+  return numStr.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+}
+
+const unformatMoneda = (valor) => {
+  if (!valor) return 0
+  const numeroPuro = valor.toString().replace(/\./g, '')
+  return Number(numeroPuro) || 0
 }
 
 const fetchData = async () => {
@@ -549,8 +562,6 @@ const deleteOrden = (id) => {
 const verFichaAuto = (vehiculo) => {
   const placa = getPlacaVehiculo(vehiculo);
   if (placa !== 'N/A') {
-    // Redirigir a VehiculosPage con filtro de placa si fuera necesario
-    // Por ahora, mostrar notificación
     $q.notify({ type: 'info', message: `Redirigiendo a ficha del vehículo ${placa}...`, position: 'top' })
   }
 }
