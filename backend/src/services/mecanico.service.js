@@ -49,17 +49,25 @@ exports.getMecanicos = async (query = {}) => {
   
   const mecanicos = await consulta.lean();
 
-  // Calcular la carga actual
-  const ordenes = await Orden.aggregate([
-    { $match: { mecanicoId: { $in: mecanicos.map(m => m._id) }, estado: { $in: ESTADOS_ACTIVOS } } },
-    { $group: { _id: '$mecanicoId', count: { $sum: 1 } } }
-  ]);
-  const cargaPorMecanico = new Map(ordenes.map(o => [String(o._id), o.count]));
+  // Obtener órdenes activas completas para cada mecánico
+  const ordenesActivas = await Orden.find({
+    mecanicoId: { $in: mecanicos.map(m => m._id) },
+    estado: { $in: ESTADOS_ACTIVOS }
+  }).populate('vehiculoId', 'placa').lean();
 
-  return mecanicos.map(m => ({
-    ...m,
-    ordenesActivas: cargaPorMecanico.get(String(m._id)) || 0
-  }));
+  const ordenesPorMecanico = new Map(mecanicos.map(m => [String(m._id), []]));
+  ordenesActivas.forEach(o => {
+    ordenesPorMecanico.get(String(o.mecanicoId)).push(o);
+  });
+
+  return mecanicos.map(m => {
+    const lista = ordenesPorMecanico.get(String(m._id));
+    return {
+      ...m,
+      ordenesActivas: lista.length,
+      ordenesLista: lista
+    };
+  });
 };
 
 exports.getMecanicoById = async (id) => {
@@ -67,8 +75,12 @@ exports.getMecanicoById = async (id) => {
   const mecanico = await Mecanico.findById(id).lean();
   if (!mecanico) return null;
 
-  const ordenesActivas = await Orden.countDocuments({ mecanicoId: id, estado: { $in: ESTADOS_ACTIVOS } });
-  return { ...mecanico, ordenesActivas };
+  const ordenesLista = await Orden.find({
+    mecanicoId: id,
+    estado: { $in: ESTADOS_ACTIVOS }
+  }).populate('vehiculoId', 'placa').lean();
+  
+  return { ...mecanico, ordenesActivas: ordenesLista.length, ordenesLista };
 };
 
 exports.updateMecanico = async (id, data) => {

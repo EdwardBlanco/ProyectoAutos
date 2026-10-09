@@ -53,18 +53,7 @@ const seedData = async () => {
     await Vehiculo.insertMany(vehiculosData);
     console.log('10 vehículos agregados correctamente.');
 
-    // 4. Crear 5 Bahías
-    const Bahia = require('./models/Bahia');
-    const bahiasData = [
-      { nombre: 'Bahía 1', tipo: 'Elevador 4T', estado: 'Disponible' },
-      { nombre: 'Bahía 2', tipo: 'Elevador Tijera', estado: 'Disponible' },
-      { nombre: 'Bahía 3', tipo: 'Scan Lab', estado: 'Disponible' },
-      { nombre: 'Bahía 4', tipo: 'Fosa Express', estado: 'Disponible' },
-      { nombre: 'Bahía 5', tipo: 'Estación Clima', estado: 'Disponible' }
-    ];
-    await Bahia.deleteMany({});
-    await Bahia.insertMany(bahiasData);
-    console.log('5 bahías agregadas correctamente.');
+
 
     console.log('--- Seed completado ---');
     process.exit(0);

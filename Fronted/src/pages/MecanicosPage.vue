@@ -4,7 +4,7 @@
 
 
       <!-- 1. TITULO -->
-      <h1 class="text-h4 text-weight-bolder q-my-none text-dark tracking-tight q-mb-md">Equipo Técnico & Bahías</h1>
+      <h1 class="text-h4 text-weight-bolder q-my-none text-dark tracking-tight q-mb-md">Equipo Técnico</h1>
 
       <!-- 2. BOTON "+" -->
       <div class="row q-gutter-x-sm q-mb-md">
@@ -35,9 +35,9 @@
         <div class="col-12 col-md-6">
           <q-card flat bordered class="bg-white q-pa-md h-full transition-all hover-up">
             <div class="text-subtitle2 text-grey-6 text-weight-bold text-uppercase">Capacidad Total de Taller</div>
-            <div class="text-h4 text-weight-bolder text-dark q-my-sm">{{ totalOrdenesActivas }} / 15 órdenes</div>
+            <div class="text-h4 text-weight-bolder text-dark q-my-sm">{{ totalOrdenesActivas }} / {{ totalCapacidadTaller }} órdenes</div>
             <div class="text-caption text-grey-7 flex items-center text-weight-medium">
-              <q-icon name="info" size="16px" class="q-mr-xs" /> Distribución equilibrada por elevador y puesto
+              <q-icon name="info" size="16px" class="q-mr-xs" /> Distribución equilibrada por mecánico
             </div>
           </q-card>
         </div>
@@ -93,6 +93,10 @@
                 <div class="col-12 col-md-4">
                   <q-input v-model="formData.correo" label="Correo *" type="email" outlined dense
                     :rules="[val => !!val || 'Requerido']" class="rounded-input" />
+                </div>
+                <div class="col-12 col-md-4">
+                  <q-input v-model.number="formData.capacidad" label="Capacidad (Órdenes) *" type="number" outlined dense
+                    :rules="[val => !!val || 'Requerido', val => val > 0 || 'Debe ser mayor a 0']" class="rounded-input" />
                 </div>
 
                 <div class="col-12 text-right q-mt-md">
@@ -166,13 +170,6 @@
 
             <!-- Card Body -->
             <div class="q-pa-md flex-grow-1 flex flex-col">
-              <!-- Bahía Info -->
-              <div class="row items-center justify-between q-mb-md bg-blue-grey-1 q-pa-sm border-radius-md">
-                <div class="text-caption text-grey-8 text-weight-medium flex items-center">
-                  <q-icon name="home_repair_service" size="16px" class="q-mr-xs text-primary" /> Bahía Asignada:
-                </div>
-                <div class="text-body2 text-weight-bold text-dark">{{ getMockBahia(mec, index) }}</div>
-              </div>
 
               <!-- Carga Operativa Progress -->
               <div class="q-mb-md">
@@ -193,26 +190,26 @@
               </div>
 
               <div class="orders-list flex-grow-1">
-                <template v-if="(mec.ordenesActivas || 0) > 0">
-                  <div v-for="i in mec.ordenesActivas" :key="i"
+                <template v-if="(mec.ordenesLista && mec.ordenesLista.length > 0)">
+                  <div v-for="orden in mec.ordenesLista" :key="orden._id"
                     class="order-item border bg-white border-radius-md q-pa-sm q-mb-sm transition-all hover-border-primary">
                     <div class="row justify-between items-center">
                       <div>
                         <div class="row items-center q-mb-xs">
-                          <span class="text-primary text-weight-bold q-mr-sm">OR-108{{ index + i + 1 }}</span>
-                          <q-badge color="dark" class="text-weight-bold placa-badge">XXX-000</q-badge>
+                          <span class="text-primary text-weight-bold q-mr-sm">{{ orden.numeroOrden }}</span>
+                          <q-badge color="dark" class="text-weight-bold placa-badge">{{ orden.vehiculoId?.placa || 'N/A' }}</q-badge>
                         </div>
                         <div class="text-caption text-grey-8">Vehículo Asignado</div>
                       </div>
-                      <q-badge :color="i % 2 === 0 ? 'positive' : 'orange-8'" class="text-weight-medium">
-                        {{ i % 2 === 0 ? 'Listo p/ Entrega' : 'En Reparación' }}
+                      <q-badge :color="orden.estado === 'Lista para entregar' ? 'positive' : 'orange-8'" class="text-weight-medium">
+                        {{ orden.estado }}
                       </q-badge>
                     </div>
                   </div>
                 </template>
                 <div v-else
                   class="text-center q-pa-md border-dashed border-radius-md bg-grey-1 text-grey-6 text-caption text-weight-medium">
-                  Bahía libre sin faenas en cola. Lista para nueva orden.
+                  Mecánico libre sin órdenes en cola. Listo para nueva orden.
                 </div>
               </div>
             </div>
@@ -253,7 +250,8 @@ const formData = ref({
   cedula: '',
   especialidad: '',
   telefono: '',
-  correo: ''
+  correo: '',
+  capacidad: 3
 })
 
 let searchTimeout = null
@@ -263,6 +261,10 @@ let searchTimeout = null
 // Computed
 const totalOrdenesActivas = computed(() => {
   return mecanicos.value.reduce((acc, mec) => acc + (mec.ordenesActivas || 0), 0)
+})
+
+const totalCapacidadTaller = computed(() => {
+  return mecanicos.value.reduce((acc, mec) => acc + (mec.capacidad || 3), 0)
 })
 
 // Methods for UI
@@ -283,16 +285,8 @@ const getInitials = (name) => {
   return name.substring(0, 2).toUpperCase()
 }
 
-const getMockBahia = (mec, index) => `Bahía ${index + 1}`
-
-const getMockEficiencia = (mec) => {
-  if (!mec.nombre) return 95
-  return 90 + (mec.nombre.length % 10)
-}
-
 const getCapacidad = (mec) => {
-  // Mock capacity based on name length for variety
-  return 2 + ((mec.nombre?.length || 0) % 3)
+  return mec.capacidad || 3
 }
 
 const getPorcentajeCarga = (mec) => {
@@ -357,7 +351,8 @@ const openForm = (mec = null) => {
       cedula: '',
       especialidad: '',
       telefono: '',
-      correo: ''
+      correo: '',
+      capacidad: 3
     }
   }
   isCreationOpen.value = true
