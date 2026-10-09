@@ -31,20 +31,8 @@
 
       <!-- Dashboard Stats -->
       <div class="row q-col-gutter-lg q-mb-xl">
-        <!-- Equipo Técnico Activo -->
-        <div class="col-12 col-md-4">
-          <q-card flat bordered class="bg-white q-pa-md h-full transition-all hover-up">
-            <div class="text-subtitle2 text-grey-6 text-weight-bold text-uppercase">Equipo Técnico Activo</div>
-            <div class="text-h4 text-weight-bolder text-dark q-my-sm">{{ mecanicos.length }} / {{
-              Math.max(mecanicos.length,
-                5) }} técnicos</div>
-            <div class="text-caption text-positive flex items-center text-weight-medium">
-              <q-icon name="check_circle" size="16px" class="q-mr-xs" /> 100% de especialidades cubiertas en turno
-            </div>
-          </q-card>
-        </div>
         <!-- Capacidad Total de Taller -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6">
           <q-card flat bordered class="bg-white q-pa-md h-full transition-all hover-up">
             <div class="text-subtitle2 text-grey-6 text-weight-bold text-uppercase">Capacidad Total de Taller</div>
             <div class="text-h4 text-weight-bolder text-dark q-my-sm">{{ totalOrdenesActivas }} / 15 órdenes</div>
@@ -54,7 +42,7 @@
           </q-card>
         </div>
         <!-- Evaluación Promedio -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6">
           <q-card flat bordered class="bg-white q-pa-md h-full transition-all hover-up">
             <div class="text-subtitle2 text-grey-6 text-weight-bold text-uppercase">Calidad de Reparaciones</div>
             <div class="text-h4 text-weight-bolder text-dark q-my-sm flex items-center">
