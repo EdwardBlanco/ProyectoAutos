@@ -37,7 +37,7 @@
             <div class="text-subtitle2 text-grey-6 text-weight-bold text-uppercase">Equipo Técnico Activo</div>
             <div class="text-h4 text-weight-bolder text-dark q-my-sm">{{ mecanicos.length }} / {{
               Math.max(mecanicos.length,
-              5) }} técnicos</div>
+                5) }} técnicos</div>
             <div class="text-caption text-positive flex items-center text-weight-medium">
               <q-icon name="check_circle" size="16px" class="q-mr-xs" /> 100% de especialidades cubiertas en turno
             </div>
@@ -53,13 +53,15 @@
             </div>
           </q-card>
         </div>
-        <!-- Eficiencia Promedio Histórica -->
+        <!-- Evaluación Promedio -->
         <div class="col-12 col-md-4">
           <q-card flat bordered class="bg-white q-pa-md h-full transition-all hover-up">
-            <div class="text-subtitle2 text-grey-6 text-weight-bold text-uppercase">Eficiencia Promedio Histórica</div>
-            <div class="text-h4 text-weight-bolder text-dark q-my-sm">96%</div>
+            <div class="text-subtitle2 text-grey-6 text-weight-bold text-uppercase">Calidad de Reparaciones</div>
+            <div class="text-h4 text-weight-bolder text-dark q-my-sm flex items-center">
+              4.8 <q-icon name="star" color="warning" size="28px" class="q-ml-sm" />
+            </div>
             <div class="text-caption text-positive flex items-center text-weight-medium">
-              <q-icon name="trending_up" size="16px" class="q-mr-xs" /> Cumplimiento de tiempos prometidos
+              <q-icon name="thumb_up" size="16px" class="q-mr-xs" /> Alta satisfacción de los clientes
             </div>
           </q-card>
         </div>
@@ -164,7 +166,6 @@
                   <div class="text-caption text-grey-7 flex items-center q-mt-xs">
                     <q-icon name="phone" size="14px" class="q-mr-xs text-grey-5" /> {{ mec.telefono }}
                     <span class="q-mx-sm">·</span>
-                    <span class="text-weight-medium text-dark">Eficiencia: {{ getMockEficiencia(mec) }}%</span>
                   </div>
                 </div>
               </div>
@@ -191,7 +192,7 @@
                   <span class="text-caption text-weight-medium text-grey-7">Carga Operativa:</span>
                   <span class="text-caption text-weight-bold text-dark">{{ mec.ordenesActivas || 0 }} / {{
                     getCapacidad(mec)
-                    }} órdenes ({{ getPorcentajeCarga(mec) }}%)</span>
+                  }} órdenes ({{ getPorcentajeCarga(mec) }}%)</span>
                 </div>
                 <q-linear-progress :value="getPorcentajeCarga(mec) / 100" :color="getCargaColor(mec)"
                   class="rounded-borders" size="8px" />

@@ -151,7 +151,6 @@
         <q-tab name="Esperando repuestos" label="Espera repuestos" no-caps class="text-weight-medium" />
         <q-tab name="Listo para entrega" label="Listo para entrega" no-caps class="text-weight-medium" />
         <q-tab name="Entregada" label="Entregada" no-caps class="text-weight-medium" />
-        <q-tab name="Fuera de taller" label="Fuera de taller" no-caps class="text-weight-medium" />
       </q-tabs>
 
       <!-- 5. REGISTRADOS (#) -->
@@ -326,7 +325,7 @@
                      <q-card-section v-else class="col flex flex-center text-grey-6 text-italic text-center q-pa-xl">
                         <div class="column items-center">
                           <q-icon name="check_circle_outline" size="xl" class="q-mb-md text-grey-4" />
-                          <div class="text-h6 text-grey-5">Fuera de taller</div>
+                          <div class="text-h6 text-grey-5">Sin reparación activa</div>
                           <div class="text-body2">No hay reparaciones activas para este vehículo.</div>
                         </div>
                      </q-card-section>
@@ -394,13 +393,14 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { useQuasar } from 'quasar'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 import api from '@/services/api'
 import { useEventBus } from '@vueuse/core'
 
 const $q = useQuasar()
 const router = useRouter()
+const route = useRoute()
 const bus = useEventBus('app-events')
 
 const vehiculos = ref([])
@@ -438,10 +438,10 @@ const estadoColors = {
   'Listo para entrega': 'teal-8',
   'Entregada': 'positive',
   'Cancelada': 'negative',
-  'Fuera de taller': 'grey'
+  'Sin orden': 'grey'
 }
 
-const quickStates = ['En diagnóstico', 'En reparación', 'Esperando repuestos', 'Listo para entrega']
+const quickStates = ['En diagnóstico', 'Pendiente de aprobación', 'En reparación', 'Esperando repuestos', 'Listo para entrega', 'Entregada', 'Cancelada']
 
 const activeOrder = computed(() => {
   if (!selectedVehiculoOrders.value.length) return null;
@@ -500,7 +500,19 @@ const onSearch = (val) => {
 }
 
 onMounted(() => {
-  loadInitialData()
+  if (route.query.q) {
+    search.value = route.query.q
+    loadInitialData(route.query.q)
+  } else {
+    loadInitialData()
+  }
+
+  if (route.query.nuevo === 'true') {
+    openForm()
+    if (route.query.clienteId) {
+      formData.value.clienteId = route.query.clienteId
+    }
+  }
 })
 
 const getVehiculoActiveOrder = (vehiculo) => {
@@ -509,7 +521,7 @@ const getVehiculoActiveOrder = (vehiculo) => {
 
 const getVehiculoStatusLabel = (vehiculo) => {
   const order = getVehiculoActiveOrder(vehiculo);
-  if (!order || order.estado === 'Cancelada') return 'Fuera de taller';
+  if (!order || order.estado === 'Cancelada' || order.estado === 'Entregada') return 'Sin orden';
   return order.estado;
 }
 
