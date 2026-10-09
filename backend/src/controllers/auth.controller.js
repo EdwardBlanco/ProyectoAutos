@@ -10,20 +10,20 @@ const login = async (req, res) => {
 
     if (!usuario) {
       return res.status(400).json({
-        msg: 'Usuario / Password no son correctos - correo'
+        message: 'Usuario / Password no son correctos - correo'
       });
     }
 
     if (usuario.estado === 0) {
       return res.status(400).json({
-        msg: 'Usuario / Password no son correctos - estado: inactivo'
+        message: 'Usuario / Password no son correctos - estado: inactivo'
       });
     }
 
     const validPassword = bcryptjs.compareSync(password, usuario.password);
     if (!validPassword) {
       return res.status(400).json({
-        msg: 'Usuario / Password no son correctos - password'
+        message: 'Usuario / Password no son correctos - password'
       });
     }
 
@@ -36,7 +36,7 @@ const login = async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      msg: 'Hable con el administrador'
+      message: 'Hable con el administrador'
     });
   }
 };
@@ -48,7 +48,7 @@ const registrar = async (req, res) => {
     let usuario = await Usuario.findOne({ email });
     if (usuario) {
       return res.status(400).json({
-        msg: 'Un usuario ya existe con ese correo'
+        message: 'Un usuario ya existe con ese correo'
       });
     }
 
@@ -71,7 +71,7 @@ const registrar = async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({
-      msg: 'Hable con el administrador'
+      message: 'Hable con el administrador'
     });
   }
 };

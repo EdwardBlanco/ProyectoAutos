@@ -1,0 +1,1154 @@
+[
+  {
+    "_id": {
+      "$oid": "8c8aee6b448d47e7ba50cd5c"
+    },
+    "nombre": "Gloria Ramírez Ramírez",
+    "telefono": "330 297 2534",
+    "correo": "gloriaramírezramírez1@example.com",
+    "direccion": "Cra 19 #52-64, barrio Las Américas, Páramo",
+    "cedula": "134899535",
+    "createdAt": {
+      "$date": "2024-03-21T06:30:51.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-04-03T03:29:25.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0c43a5c91e58425e9262b848"
+    },
+    "nombre": "Mateo Martínez Cárdenas",
+    "telefono": "305 921 9652",
+    "correo": "mateomartínezcárdenas2@example.com",
+    "direccion": "Cra 5 #41-17, barrio Santa Cruz, San Gil",
+    "cedula": "186071185",
+    "createdAt": {
+      "$date": "2025-01-31T17:40:32.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-08-26T11:41:17.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a514d3340efd4d7d953a6ae4"
+    },
+    "nombre": "Natalia Parra Peña",
+    "telefono": "314 910 3786",
+    "correo": "nataliaparrapeña3@example.com",
+    "direccion": "Cra 6 #35-1, barrio Ragonessi, Socorro",
+    "cedula": "47406785",
+    "createdAt": {
+      "$date": "2024-04-01T05:17:27.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-07-01T23:58:02.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "dadb378cd9b34c1192a6a57f"
+    },
+    "nombre": "Ángela Peña Gómez",
+    "telefono": "351 540 2623",
+    "correo": "ángelapeñagómez4@example.com",
+    "direccion": "Cra 3 #56-19, barrio Bella Isla, Villanueva",
+    "cedula": "947796257",
+    "createdAt": {
+      "$date": "2023-04-20T13:15:00.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-02-22T02:21:28.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "eaf37704647d41a894ecc854"
+    },
+    "nombre": "Julián Díaz Díaz",
+    "telefono": "321 687 6945",
+    "correo": "juliándíazdíaz5@example.com",
+    "direccion": "Cra 3 #31-96, barrio Ragonessi, Páramo",
+    "cedula": "648445447",
+    "createdAt": {
+      "$date": "2026-09-26T20:30:54.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-09-30T02:28:51.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "edb7d5f93758480ea02b4841"
+    },
+    "nombre": "Luis Serrano Gómez",
+    "telefono": "351 372 1068",
+    "correo": "luisserranogómez6@example.com",
+    "direccion": "Cra 30 #34-95, barrio Paseo del Mango, Oiba",
+    "cedula": "1822068443",
+    "createdAt": {
+      "$date": "2024-01-17T05:12:25.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-06-17T13:31:05.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9bf0a8705c974719b27a04b4"
+    },
+    "nombre": "Natalia Mendoza Díaz",
+    "telefono": "350 841 5636",
+    "correo": "nataliamendozadíaz7@example.com",
+    "direccion": "Cra 4 #66-9, barrio La Floresta, Villanueva",
+    "cedula": "224037900",
+    "createdAt": {
+      "$date": "2024-04-20T22:34:56.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-05-10T13:37:11.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7e43d7aad52249bc914f4cc7"
+    },
+    "nombre": "David Martínez Moreno",
+    "telefono": "315 816 3386",
+    "correo": "davidmartínezmoreno8@example.com",
+    "direccion": "Cra 17 #27-19, barrio El Vergel, Valle de San José",
+    "cedula": "345332058",
+    "createdAt": {
+      "$date": "2025-01-14T05:19:55.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-06-25T15:01:45.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "159032b424394ea2bb4d5593"
+    },
+    "nombre": "Viviana Parra Herrera",
+    "telefono": "302 793 4221",
+    "correo": "vivianaparraherrera9@example.com",
+    "direccion": "Cra 9 #59-47, barrio Paseo del Mango, Curití",
+    "cedula": "1421691759",
+    "createdAt": {
+      "$date": "2025-02-28T17:33:42.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-07-29T03:51:45.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e9676a268529419db54a1915"
+    },
+    "nombre": "Luis Rodríguez Serrano",
+    "telefono": "322 156 2107",
+    "correo": "luisrodríguezserrano10@example.com",
+    "direccion": "Cra 35 #58-1, barrio Paseo del Mango, Oiba",
+    "cedula": "1696857318",
+    "createdAt": {
+      "$date": "2024-03-02T15:49:31.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-08-07T12:08:44.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c8a417a5c5b9406e8e35ff7e"
+    },
+    "nombre": "Claudia Quintero Gutiérrez",
+    "telefono": "337 168 4106",
+    "correo": "claudiaquinterogutiérrez11@example.com",
+    "direccion": "Cra 16 #22-32, barrio Las Américas, Oiba",
+    "cedula": "713954991",
+    "createdAt": {
+      "$date": "2024-02-20T13:00:34.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-10-14T00:13:52.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c965ea0b040546b797b5b7a0"
+    },
+    "nombre": "Adriana Serrano Gómez",
+    "telefono": "330 711 7866",
+    "correo": "adrianaserranogómez12@example.com",
+    "direccion": "Cra 31 #78-25, barrio La Libertad, Páramo",
+    "cedula": "1352462962",
+    "createdAt": {
+      "$date": "2025-01-08T01:50:19.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-06-20T03:06:51.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1a46fbd36ebc4b178f31b720"
+    },
+    "nombre": "Yulieth Peña Torres",
+    "telefono": "319 347 3184",
+    "correo": "yuliethpeñatorres13@example.com",
+    "direccion": "Cra 11 #51-44, barrio Ciudadela, Barichara",
+    "cedula": "1905748809",
+    "createdAt": {
+      "$date": "2025-10-19T06:24:56.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-08-29T23:33:35.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "bd165d2c43db4404a44d017f"
+    },
+    "nombre": "Paola Gutiérrez Díaz",
+    "telefono": "303 371 4087",
+    "correo": "paolagutiérrezdíaz14@example.com",
+    "direccion": "Cra 8 #75-23, barrio Las Américas, Páramo",
+    "cedula": "608383239",
+    "createdAt": {
+      "$date": "2024-12-12T00:42:01.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-07-17T03:16:30.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a1c9b259c1c74f45bec1b657"
+    },
+    "nombre": "Sandra Moreno López",
+    "telefono": "330 217 3687",
+    "correo": "sandramorenolópez15@example.com",
+    "direccion": "Cra 26 #54-58, barrio Las Américas, Charalá",
+    "cedula": "770940646",
+    "createdAt": {
+      "$date": "2024-02-12T15:56:58.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-06-09T07:56:55.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "18e2b999470942a9a88ea52e"
+    },
+    "nombre": "Camilo Díaz Castro",
+    "telefono": "329 801 9704",
+    "correo": "camilodíazcastro16@example.com",
+    "direccion": "Cra 35 #35-90, barrio Altos del Fonce, Villanueva",
+    "cedula": "1083480141",
+    "createdAt": {
+      "$date": "2026-05-22T17:27:58.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-09-19T17:28:48.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1056d507f4914cd2a47cf77b"
+    },
+    "nombre": "Ricardo Moreno Bautista",
+    "telefono": "305 532 7933",
+    "correo": "ricardomorenobautista17@example.com",
+    "direccion": "Cra 21 #56-66, barrio La Floresta, Aratoca",
+    "cedula": "109554163",
+    "createdAt": {
+      "$date": "2024-09-03T01:18:39.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-02-11T09:01:27.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9207351d881942508fd6ae9b"
+    },
+    "nombre": "Adriana Vargas Díaz",
+    "telefono": "318 733 1205",
+    "correo": "adrianavargasdíaz18@example.com",
+    "direccion": "Cra 13 #21-98, barrio La Gruta, Barichara",
+    "cedula": "50297564",
+    "createdAt": {
+      "$date": "2024-03-08T02:05:12.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-04-12T15:53:17.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "acb42a7a04484f8bb3b500a9"
+    },
+    "nombre": "Marcela Sánchez López",
+    "telefono": "339 573 6340",
+    "correo": "marcelasánchezlópez19@example.com",
+    "direccion": "Cra 7 #6-13, barrio La Gruta, Valle de San José",
+    "cedula": "1043791494",
+    "createdAt": {
+      "$date": "2023-06-26T20:42:03.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-07-13T00:30:41.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8c474c17550148f6aa005e43"
+    },
+    "nombre": "Julián Rojas Gómez",
+    "telefono": "311 361 8111",
+    "correo": "juliánrojasgómez20@example.com",
+    "direccion": "Cra 29 #6-52, barrio Villa del Prado, San Gil",
+    "cedula": "1570188550",
+    "createdAt": {
+      "$date": "2023-10-01T09:39:18.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-05-07T00:40:43.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e6be5c390398458bad99ed25"
+    },
+    "nombre": "David López Díaz",
+    "telefono": "321 401 1859",
+    "correo": "davidlópezdíaz21@example.com",
+    "direccion": "Cra 33 #7-99, barrio Ragonessi, Aratoca",
+    "cedula": "1094449837",
+    "createdAt": {
+      "$date": "2026-05-05T02:15:44.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-08-25T13:29:15.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8ba50b45292049e49fd36166"
+    },
+    "nombre": "Karen Peña Mendoza",
+    "telefono": "330 956 8502",
+    "correo": "karenpeñamendoza22@example.com",
+    "direccion": "Cra 17 #13-30, barrio La Gruta, Socorro",
+    "cedula": "1051241125",
+    "createdAt": {
+      "$date": "2025-09-19T21:06:53.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-06-05T12:07:15.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "81ed5639aecb4842b6cdbcba"
+    },
+    "nombre": "Mónica Parra Gutiérrez",
+    "telefono": "329 327 4554",
+    "correo": "mónicaparragutiérrez23@example.com",
+    "direccion": "Cra 3 #3-96, barrio Bella Isla, Villanueva",
+    "cedula": "1628821824",
+    "createdAt": {
+      "$date": "2026-02-19T04:55:18.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-08-20T03:25:14.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9b26289b13b24e2b8b7fe0fd"
+    },
+    "nombre": "Ómar Martínez López",
+    "telefono": "325 696 8715",
+    "correo": "ómarmartínezlópez24@example.com",
+    "direccion": "Cra 15 #71-80, barrio El Poblado, Aratoca",
+    "cedula": "1442430826",
+    "createdAt": {
+      "$date": "2024-05-18T23:52:39.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-01-17T17:52:34.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "711f668e62914963aa4cd84d"
+    },
+    "nombre": "Marcela Romero Gutiérrez",
+    "telefono": "312 200 3559",
+    "correo": "marcelaromerogutiérrez25@example.com",
+    "direccion": "Cra 24 #35-39, barrio El Poblado, Curití",
+    "cedula": "1376395210",
+    "createdAt": {
+      "$date": "2026-09-05T03:23:00.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-01T04:49:01.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "388ca929bbfc4f3987b77821"
+    },
+    "nombre": "Andrés Suárez Castro",
+    "telefono": "331 560 2763",
+    "correo": "andréssuárezcastro26@example.com",
+    "direccion": "Cra 9 #25-44, barrio La Libertad, Villanueva",
+    "cedula": "81719781",
+    "createdAt": {
+      "$date": "2026-03-01T02:06:34.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-04-09T01:42:17.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0b039c5de3d3468dad6226e1"
+    },
+    "nombre": "Paola Quintero Rojas",
+    "telefono": "312 521 1792",
+    "correo": "paolaquinterorojas27@example.com",
+    "direccion": "Cra 19 #72-47, barrio El Poblado, Pinchote",
+    "cedula": "61571840",
+    "createdAt": {
+      "$date": "2024-06-15T17:14:19.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-05-27T09:09:15.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c7a6c3f994cd47a8acf9f572"
+    },
+    "nombre": "Jorge Cárdenas Gutiérrez",
+    "telefono": "356 259 7296",
+    "correo": "jorgecárdenasgutiérrez28@example.com",
+    "direccion": "Cra 35 #1-1, barrio Ragonessi, Aratoca",
+    "cedula": "1940814967",
+    "createdAt": {
+      "$date": "2025-05-29T08:03:59.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-02-13T21:52:24.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d6411d77b3394382906b39e2"
+    },
+    "nombre": "Silvia Ortiz Suárez",
+    "telefono": "329 190 8129",
+    "correo": "silviaortizsuárez29@example.com",
+    "direccion": "Cra 22 #66-93, barrio El Poblado, Aratoca",
+    "cedula": "1985187566",
+    "createdAt": {
+      "$date": "2023-07-27T00:31:27.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-06-01T19:07:37.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "aee64748f30d44e497a60d03"
+    },
+    "nombre": "Paola Bautista Quintero",
+    "telefono": "307 462 6315",
+    "correo": "paolabautistaquintero30@example.com",
+    "direccion": "Cra 30 #49-78, barrio La Playa, Curití",
+    "cedula": "166736052",
+    "createdAt": {
+      "$date": "2026-03-27T08:50:54.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-03-28T07:29:15.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "628e3bce9a0745259785df9a"
+    },
+    "nombre": "Marcela Mendoza Ortiz",
+    "telefono": "322 994 3432",
+    "correo": "marcelamendozaortiz31@example.com",
+    "direccion": "Cra 14 #66-24, barrio La Libertad, Barichara",
+    "cedula": "474117095",
+    "createdAt": {
+      "$date": "2023-12-06T15:51:44.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-10-16T21:15:37.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d4b6febc82f94051ad7169d0"
+    },
+    "nombre": "Sandra Cárdenas Serrano",
+    "telefono": "308 965 3124",
+    "correo": "sandracárdenasserrano32@example.com",
+    "direccion": "Cra 16 #28-61, barrio La Floresta, Pinchote",
+    "cedula": "1231776228",
+    "createdAt": {
+      "$date": "2024-11-07T03:01:22.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-05-11T19:03:46.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c9389ed1a0374eaa82de8ea7"
+    },
+    "nombre": "Luz Marina Torres Suárez",
+    "telefono": "312 495 8830",
+    "correo": "luzmarinatorressuárez33@example.com",
+    "direccion": "Cra 16 #61-19, barrio San Martín, Villanueva",
+    "cedula": "1219332026",
+    "createdAt": {
+      "$date": "2025-09-19T03:53:55.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-01-02T06:31:24.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d46d21d8907945648a818718"
+    },
+    "nombre": "Ómar Moreno Quintero",
+    "telefono": "326 170 2626",
+    "correo": "ómarmorenoquintero34@example.com",
+    "direccion": "Cra 9 #71-81, barrio El Vergel, Aratoca",
+    "cedula": "1926222710",
+    "createdAt": {
+      "$date": "2026-06-17T19:43:42.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-06T20:03:55.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "296b55745c29444cb2ecf78f"
+    },
+    "nombre": "Mateo Suárez Gutiérrez",
+    "telefono": "313 120 6907",
+    "correo": "mateosuárezgutiérrez35@example.com",
+    "direccion": "Cra 12 #67-48, barrio Ragonessi, Villanueva",
+    "cedula": "172273271",
+    "createdAt": {
+      "$date": "2023-07-15T18:32:07.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-12-26T18:27:29.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "317eb9e8ddbd4f5ea464370a"
+    },
+    "nombre": "Luis Gómez Ortiz",
+    "telefono": "319 715 6962",
+    "correo": "luisgómezortiz36@example.com",
+    "direccion": "Cra 12 #9-75, barrio El Poblado, Villanueva",
+    "cedula": "1781760455",
+    "createdAt": {
+      "$date": "2023-08-20T06:13:23.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-03-19T14:26:49.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "fde778d20a28488f800cb7fe"
+    },
+    "nombre": "Diego Ortiz Arias",
+    "telefono": "351 242 7130",
+    "correo": "diegoortizarias37@example.com",
+    "direccion": "Cra 15 #7-92, barrio La Playa, Aratoca",
+    "cedula": "992341833",
+    "createdAt": {
+      "$date": "2023-12-10T07:06:29.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T11:59:35.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67ea8567a68443558883f9fa"
+    },
+    "nombre": "Luis Reyes Gómez",
+    "telefono": "351 670 4683",
+    "correo": "luisreyesgómez38@example.com",
+    "direccion": "Cra 32 #68-34, barrio La Floresta, Socorro",
+    "cedula": "1165423353",
+    "createdAt": {
+      "$date": "2024-03-02T19:06:14.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-03-11T18:08:44.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1046b47d7455471da13fdf9f"
+    },
+    "nombre": "Carolina Rodríguez Castro",
+    "telefono": "311 947 5267",
+    "correo": "carolinarodríguezcastro39@example.com",
+    "direccion": "Cra 27 #13-17, barrio El Vergel, Oiba",
+    "cedula": "1780287279",
+    "createdAt": {
+      "$date": "2026-05-27T20:06:53.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-06-17T10:16:51.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6f8bf4ab154246fba2bcb994"
+    },
+    "nombre": "Ángela Ortiz Mendoza",
+    "telefono": "339 417 2528",
+    "correo": "ángelaortizmendoza40@example.com",
+    "direccion": "Cra 19 #5-79, barrio Las Américas, Oiba",
+    "cedula": "1625508079",
+    "createdAt": {
+      "$date": "2024-06-04T08:30:29.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-09-07T06:31:34.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4d51370b52764761a598cf11"
+    },
+    "nombre": "Camilo Martínez Ramírez",
+    "telefono": "351 203 8170",
+    "correo": "camilomartínezramírez41@example.com",
+    "direccion": "Cra 6 #61-62, barrio Ciudadela, Valle de San José",
+    "cedula": "202219376",
+    "createdAt": {
+      "$date": "2023-09-06T17:47:17.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-07-15T07:26:34.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a5aa41122b1b410aa5291856"
+    },
+    "nombre": "Jaime Romero Rojas",
+    "telefono": "311 915 8802",
+    "correo": "jaimeromerorojas42@example.com",
+    "direccion": "Cra 30 #77-74, barrio Santa Cruz, Oiba",
+    "cedula": "171963643",
+    "createdAt": {
+      "$date": "2024-04-24T05:26:22.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-02-26T00:46:39.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "08e365c579f84d3095ef2120"
+    },
+    "nombre": "Mateo Arias Reyes",
+    "telefono": "315 618 5930",
+    "correo": "mateoariasreyes43@example.com",
+    "direccion": "Cra 25 #63-7, barrio Bella Isla, Aratoca",
+    "cedula": "137054985",
+    "createdAt": {
+      "$date": "2026-01-06T18:51:21.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-06-08T00:04:29.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a7cf625c74af4090a321eb42"
+    },
+    "nombre": "Jaime Martínez Rojas",
+    "telefono": "300 360 9793",
+    "correo": "jaimemartínezrojas44@example.com",
+    "direccion": "Cra 35 #7-15, barrio San Martín, Páramo",
+    "cedula": "1527006948",
+    "createdAt": {
+      "$date": "2024-01-13T06:12:03.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-01-29T09:36:06.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e788f55f2c91434fa67a6cee"
+    },
+    "nombre": "Mauricio Rodríguez Gutiérrez",
+    "telefono": "305 145 4741",
+    "correo": "mauriciorodríguezgutiérrez45@example.com",
+    "direccion": "Cra 10 #45-19, barrio Altos del Fonce, Socorro",
+    "cedula": "487232107",
+    "createdAt": {
+      "$date": "2024-11-07T16:09:01.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-10-19T10:35:08.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b137972a8c7b4090b656a841"
+    },
+    "nombre": "Luis Peña Suárez",
+    "telefono": "319 946 5689",
+    "correo": "luispeñasuárez46@example.com",
+    "direccion": "Cra 7 #34-65, barrio La Libertad, Aratoca",
+    "cedula": "1338711358",
+    "createdAt": {
+      "$date": "2026-09-06T04:40:46.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-09-22T06:14:36.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7418896db2f8423db8cce995"
+    },
+    "nombre": "Sandra Ramírez Suárez",
+    "telefono": "323 862 6721",
+    "correo": "sandraramírezsuárez47@example.com",
+    "direccion": "Cra 5 #13-78, barrio Altos del Fonce, San Gil",
+    "cedula": "566163921",
+    "createdAt": {
+      "$date": "2024-06-14T17:03:11.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-02-23T03:10:08.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e7d892dd9d1441efb73f121f"
+    },
+    "nombre": "Liliana Díaz Mendoza",
+    "telefono": "313 710 8183",
+    "correo": "lilianadíazmendoza48@example.com",
+    "direccion": "Cra 26 #54-45, barrio Bella Isla, Villanueva",
+    "cedula": "798450831",
+    "createdAt": {
+      "$date": "2025-01-11T03:45:49.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-08-20T19:34:33.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4f7008fbd5344e47966765a4"
+    },
+    "nombre": "Adriana Parra López",
+    "telefono": "328 316 9711",
+    "correo": "adrianaparralópez49@example.com",
+    "direccion": "Cra 22 #9-9, barrio El Poblado, Valle de San José",
+    "cedula": "1693452435",
+    "createdAt": {
+      "$date": "2023-03-03T18:52:02.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-04-10T01:39:50.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e01d77226fb84bcba3c0dec0"
+    },
+    "nombre": "Carlos Quintero Bautista",
+    "telefono": "303 519 2708",
+    "correo": "carlosquinterobautista50@example.com",
+    "direccion": "Cra 30 #6-20, barrio La Gruta, Socorro",
+    "cedula": "1842684764",
+    "createdAt": {
+      "$date": "2023-09-21T06:03:11.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-04-21T23:29:58.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d51f5cc709b4496a15eecdd"
+    },
+    "nombre": "Felipe López García",
+    "telefono": "316 261 8975",
+    "correo": "felipelópezgarcía51@example.com",
+    "direccion": "Cra 14 #32-9, barrio Las Américas, Oiba",
+    "cedula": "1415071522",
+    "createdAt": {
+      "$date": "2025-07-31T14:47:08.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-01-27T13:40:02.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ad895f72c3af4300862c47e3"
+    },
+    "nombre": "David Mendoza Pérez",
+    "telefono": "334 870 7238",
+    "correo": "davidmendozapérez52@example.com",
+    "direccion": "Cra 21 #20-53, barrio Paseo del Mango, Barichara",
+    "cedula": "60159269",
+    "createdAt": {
+      "$date": "2024-12-31T19:52:48.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-09-12T06:01:35.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f8e0b45a4e264eefac104782"
+    },
+    "nombre": "Gloria Moreno Moreno",
+    "telefono": "300 225 7234",
+    "correo": "gloriamorenomoreno53@example.com",
+    "direccion": "Cra 31 #6-46, barrio La Playa, Oiba",
+    "cedula": "220854239",
+    "createdAt": {
+      "$date": "2024-03-29T05:15:53.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T18:59:09.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "10f7a1fe35cd4a87bc5e9328"
+    },
+    "nombre": "Silvia García Mendoza",
+    "telefono": "318 976 9601",
+    "correo": "silviagarcíamendoza54@example.com",
+    "direccion": "Cra 24 #67-33, barrio Santa Cruz, Valle de San José",
+    "cedula": "316010392",
+    "createdAt": {
+      "$date": "2023-10-10T09:59:17.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-01-17T01:38:44.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "38803556e6af4212a2342095"
+    },
+    "nombre": "Mauricio Mendoza Bautista",
+    "telefono": "336 554 5495",
+    "correo": "mauriciomendozabautista55@example.com",
+    "direccion": "Cra 11 #61-19, barrio Bella Isla, Villanueva",
+    "cedula": "396489226",
+    "createdAt": {
+      "$date": "2023-01-15T08:36:53.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-05-16T18:22:21.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b502a66b7a0b424c949b665a"
+    },
+    "nombre": "Camilo Pérez Gutiérrez",
+    "telefono": "338 907 1980",
+    "correo": "camilopérezgutiérrez56@example.com",
+    "direccion": "Cra 30 #67-59, barrio Las Américas, Valle de San José",
+    "cedula": "1794748852",
+    "createdAt": {
+      "$date": "2025-07-03T23:38:21.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-03-28T07:40:18.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9e2492328672446bbe3d8b1f"
+    },
+    "nombre": "Jaime Suárez Martínez",
+    "telefono": "317 977 6499",
+    "correo": "jaimesuárezmartínez57@example.com",
+    "direccion": "Cra 7 #1-13, barrio Villa del Prado, Valle de San José",
+    "cedula": "614836425",
+    "createdAt": {
+      "$date": "2024-12-27T08:57:22.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-02-22T05:00:10.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c6ddf8d54f614665933ca01e"
+    },
+    "nombre": "Jaime Gutiérrez Ramírez",
+    "telefono": "336 604 2818",
+    "correo": "jaimegutiérrezramírez58@example.com",
+    "direccion": "Cra 14 #36-26, barrio Las Américas, Pinchote",
+    "cedula": "1838394777",
+    "createdAt": {
+      "$date": "2024-10-05T18:23:01.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-08-08T05:25:15.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8dcd75d30dfe4c08971a9561"
+    },
+    "nombre": "Gloria Arias Flórez",
+    "telefono": "328 751 5383",
+    "correo": "gloriaariasflórez59@example.com",
+    "direccion": "Cra 16 #20-78, barrio Bella Isla, Oiba",
+    "cedula": "890670631",
+    "createdAt": {
+      "$date": "2026-07-18T18:07:01.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T12:23:44.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "33ab212307f34ec0bd7bc72c"
+    },
+    "nombre": "Adriana Ramírez Serrano",
+    "telefono": "326 592 2737",
+    "correo": "adrianaramírezserrano60@example.com",
+    "direccion": "Cra 8 #37-96, barrio La Floresta, Oiba",
+    "cedula": "147395260",
+    "createdAt": {
+      "$date": "2024-12-29T08:44:11.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-12-04T05:53:33.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e9fdbc2aacd8485ebfa3befa"
+    },
+    "nombre": "Diana Castro Suárez",
+    "telefono": "334 903 4446",
+    "correo": "dianacastrosuárez61@example.com",
+    "direccion": "Cra 2 #30-24, barrio El Vergel, Aratoca",
+    "cedula": "952285057",
+    "createdAt": {
+      "$date": "2024-10-09T16:05:09.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-07-29T01:28:32.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5e8a565d7b1f4cc1a147643a"
+    },
+    "nombre": "Sandra Díaz García",
+    "telefono": "355 803 7877",
+    "correo": "sandradíazgarcía62@example.com",
+    "direccion": "Cra 24 #20-95, barrio El Vergel, Valle de San José",
+    "cedula": "705634444",
+    "createdAt": {
+      "$date": "2024-02-14T08:51:10.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-06-02T07:46:22.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "995de929a90a43e28c6d16b3"
+    },
+    "nombre": "Diana Mendoza Parra",
+    "telefono": "306 379 6233",
+    "correo": "dianamendozaparra63@example.com",
+    "direccion": "Cra 27 #64-8, barrio San Martín, Valle de San José",
+    "cedula": "905668874",
+    "createdAt": {
+      "$date": "2024-08-18T16:00:22.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-09-05T17:35:41.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c1d6ea523dbb457dac05e4cc"
+    },
+    "nombre": "Wilson Moreno Reyes",
+    "telefono": "319 512 6864",
+    "correo": "wilsonmorenoreyes64@example.com",
+    "direccion": "Cra 8 #31-61, barrio Paseo del Mango, Oiba",
+    "cedula": "1942431255",
+    "createdAt": {
+      "$date": "2023-07-14T11:24:53.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-04-12T22:33:48.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9bbf909c25404ccf9b4068c9"
+    },
+    "nombre": "Yulieth Parra Bautista",
+    "telefono": "335 905 3075",
+    "correo": "yuliethparrabautista65@example.com",
+    "direccion": "Cra 18 #28-8, barrio Altos del Fonce, Curití",
+    "cedula": "1398018403",
+    "createdAt": {
+      "$date": "2023-10-15T13:31:29.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-04-30T09:40:05.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5e40627e98f543f1856d7a90"
+    },
+    "nombre": "Gloria Sánchez Díaz",
+    "telefono": "309 173 3950",
+    "correo": "gloriasánchezdíaz66@example.com",
+    "direccion": "Cra 25 #37-94, barrio Santa Cruz, Barichara",
+    "cedula": "387833970",
+    "createdAt": {
+      "$date": "2025-02-13T07:25:16.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-12-09T11:59:55.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "238ef95833a741ddaafa3a08"
+    },
+    "nombre": "Jaime Bautista Arias",
+    "telefono": "326 303 7299",
+    "correo": "jaimebautistaarias67@example.com",
+    "direccion": "Cra 19 #34-19, barrio Ciudadela, Valle de San José",
+    "cedula": "791231803",
+    "createdAt": {
+      "$date": "2025-08-13T03:27:27.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-07-12T06:44:14.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "af4c17203ac64f8e98622607"
+    },
+    "nombre": "Paola Gutiérrez Rodríguez",
+    "telefono": "310 596 2933",
+    "correo": "paolagutiérrezrodríguez68@example.com",
+    "direccion": "Cra 4 #80-53, barrio Las Américas, San Gil",
+    "cedula": "247287547",
+    "createdAt": {
+      "$date": "2023-11-14T22:49:43.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-09-08T13:24:47.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4932e3463ecc4d37b96dd58c"
+    },
+    "nombre": "María Fernanda Torres Rojas",
+    "telefono": "307 298 9966",
+    "correo": "maríafernandatorresrojas69@example.com",
+    "direccion": "Cra 8 #15-91, barrio Ragonessi, San Gil",
+    "cedula": "1139923223",
+    "createdAt": {
+      "$date": "2023-02-02T03:24:55.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-12-31T20:35:15.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0dea515f907b4579b093c53e"
+    },
+    "nombre": "David Cárdenas Martínez",
+    "telefono": "332 570 3641",
+    "correo": "davidcárdenasmartínez70@example.com",
+    "direccion": "Cra 22 #29-59, barrio La Gruta, Valle de San José",
+    "cedula": "925757476",
+    "createdAt": {
+      "$date": "2025-05-22T02:19:25.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-07-24T21:06:59.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d4c6e0c4486f4be387436f41"
+    },
+    "nombre": "Liliana Ramírez Romero",
+    "telefono": "352 374 1724",
+    "correo": "lilianaramírezromero71@example.com",
+    "direccion": "Cra 24 #5-21, barrio Bella Isla, San Gil",
+    "cedula": "569512621",
+    "createdAt": {
+      "$date": "2025-10-07T17:32:58.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-09-27T11:00:41.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c12beb3ee65240a59a58de64"
+    },
+    "nombre": "Paola Gutiérrez Arias",
+    "telefono": "312 323 4558",
+    "correo": "paolagutiérrezarias72@example.com",
+    "direccion": "Cra 24 #10-9, barrio La Gruta, Socorro",
+    "cedula": "593981562",
+    "createdAt": {
+      "$date": "2025-01-11T22:53:39.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-07-16T19:19:15.000-05:00"
+    }
+  }
+]

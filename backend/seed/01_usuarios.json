@@ -1,0 +1,122 @@
+[
+  {
+    "_id": {
+      "$oid": "f45a1f70490d4c3893d098ee"
+    },
+    "email": "recepcion@taller.example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+    "estado": 1,
+    "cedula": "1100123456",
+    "createdAt": {
+      "$date": "2025-03-29T21:33:56.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-05-04T03:03:10.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1643243ef6984b049ecb9b31"
+    },
+    "email": "asesor1@taller.example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+    "estado": 1,
+    "cedula": "1100234567",
+    "createdAt": {
+      "$date": "2025-11-12T07:41:55.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-02-13T13:37:23.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "105d1594bffa4252bbce3000"
+    },
+    "email": "asesor2@taller.example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+    "estado": 1,
+    "cedula": "1100345678",
+    "createdAt": {
+      "$date": "2024-08-26T03:02:16.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-03-31T11:00:28.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e0788b50b65f4a95bcf276a7"
+    },
+    "email": "caja@taller.example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+    "estado": 1,
+    "cedula": "1100456789",
+    "createdAt": {
+      "$date": "2024-05-14T17:20:20.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-04-13T10:06:17.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "86d2fe0c4d724cd8a4473449"
+    },
+    "email": "admin@taller.example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+    "estado": 1,
+    "cedula": "1100567890",
+    "createdAt": {
+      "$date": "2025-04-27T02:49:54.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-03T08:11:15.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cb5ef574ae6346c087202ae1"
+    },
+    "email": "recepcion2@taller.example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+    "estado": 1,
+    "cedula": "1100678901",
+    "createdAt": {
+      "$date": "2024-12-05T13:24:36.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-10-19T17:54:54.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "af243e79ddfc42fb8fd73a68"
+    },
+    "email": "asesor3@taller.example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+    "estado": 0,
+    "cedula": "1100789012",
+    "createdAt": {
+      "$date": "2024-07-08T04:01:17.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-07-03T22:21:59.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "26ff4df4f4d648f48df41d26"
+    },
+    "email": "auxiliar@taller.example.com",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+    "estado": 1,
+    "cedula": "1100890123",
+    "createdAt": {
+      "$date": "2024-02-13T03:53:36.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-10-24T19:03:33.000-05:00"
+    }
+  }
+]

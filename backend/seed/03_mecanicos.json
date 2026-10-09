@@ -1,0 +1,194 @@
+[
+  {
+    "_id": {
+      "$oid": "9b926c5c92ed4c4297f65ace"
+    },
+    "nombre": "Claudia Reyes Parra",
+    "especialidad": "Diagnóstico electrónico",
+    "telefono": "+57 308 830 5267",
+    "cedula": "1687483796",
+    "correo": "mecanico1@taller.example.com",
+    "createdAt": {
+      "$date": "2022-12-13T11:18:36.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-09-13T16:14:50.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "93669d1c4c1546478d910e54"
+    },
+    "nombre": "Diego Ortiz Torres",
+    "especialidad": "Motores gasolina",
+    "telefono": "+57 336 900 1075",
+    "cedula": "1340252804",
+    "correo": "mecanico2@taller.example.com",
+    "createdAt": {
+      "$date": "2022-12-04T02:39:35.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-02-18T03:17:33.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d024b6b65be84054b4f2a9b0"
+    },
+    "nombre": "Héctor Rojas Sánchez",
+    "especialidad": "Electricidad automotriz",
+    "telefono": "+57 321 927 4443",
+    "cedula": "552052279",
+    "correo": "mecanico3@taller.example.com",
+    "createdAt": {
+      "$date": "2025-06-27T21:14:45.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-01T15:47:32.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64d9d967925c4c6b8a146a8c"
+    },
+    "nombre": "Leidy Quintero Torres",
+    "especialidad": "Frenos y suspensión",
+    "telefono": "+57 314 319 2870",
+    "cedula": "757673110",
+    "correo": "mecanico4@taller.example.com",
+    "createdAt": {
+      "$date": "2025-01-21T23:55:18.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-11-27T09:25:52.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "46ef6b730c7840e5873dd0c4"
+    },
+    "nombre": "Óscar Quintero Peña",
+    "especialidad": "Transmisiones",
+    "telefono": "+57 303 798 2548",
+    "cedula": "826377428",
+    "correo": "mecanico5@taller.example.com",
+    "createdAt": {
+      "$date": "2025-02-22T00:21:37.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-09-06T09:32:15.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f5efcb22797d440e89eab228"
+    },
+    "nombre": "Luz Marina Ortiz Bautista",
+    "especialidad": "Aire acondicionado",
+    "telefono": "+57 337 494 6414",
+    "cedula": "1659355608",
+    "correo": "mecanico6@taller.example.com",
+    "createdAt": {
+      "$date": "2024-11-07T23:21:31.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-11-13T03:45:41.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "487d874fdef44e97bb4a2814"
+    },
+    "nombre": "Paola Peña Castro",
+    "especialidad": "Mecánica diésel",
+    "telefono": "+57 316 793 4042",
+    "cedula": "1811306051",
+    "correo": "mecanico7@taller.example.com",
+    "createdAt": {
+      "$date": "2024-06-28T07:30:12.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-07-29T06:50:29.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4b50f17311de4a6e8c3c0514"
+    },
+    "nombre": "Tatiana Peña Reyes",
+    "especialidad": "Inyección electrónica",
+    "telefono": "+57 312 519 9030",
+    "cedula": "523472970",
+    "correo": "mecanico8@taller.example.com",
+    "createdAt": {
+      "$date": "2024-01-16T10:31:57.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-11-19T15:49:07.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a9652764ba0a4256b72eabe6"
+    },
+    "nombre": "Luz Marina Sánchez Peña",
+    "especialidad": "Mantenimiento preventivo",
+    "telefono": "+57 324 998 1432",
+    "cedula": "79788250",
+    "correo": "mecanico9@taller.example.com",
+    "createdAt": {
+      "$date": "2023-09-17T04:03:01.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-11-26T16:21:58.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "229fc4645a8b48ff989b5fb6"
+    },
+    "nombre": "Jorge Bautista Parra",
+    "especialidad": "Motocicletas",
+    "telefono": "+57 313 990 1766",
+    "cedula": "1783793200",
+    "correo": "mecanico10@taller.example.com",
+    "createdAt": {
+      "$date": "2022-12-07T19:37:29.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-01-26T18:33:04.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a63eb15e306a43dc823de0ad"
+    },
+    "nombre": "Jaime Pérez Parra",
+    "especialidad": "Latonería y pintura",
+    "telefono": "+57 329 767 9612",
+    "cedula": "1147800039",
+    "correo": "mecanico11@taller.example.com",
+    "createdAt": {
+      "$date": "2023-06-09T21:20:57.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-06-13T21:40:45.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b392315545224b4dac1e394d"
+    },
+    "nombre": "Ómar López Romero",
+    "especialidad": "Alineación y balanceo",
+    "telefono": "+57 326 937 1158",
+    "cedula": "56450060",
+    "correo": "mecanico12@taller.example.com",
+    "createdAt": {
+      "$date": "2025-06-26T00:01:14.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-04-15T02:19:38.000-05:00"
+    }
+  }
+]

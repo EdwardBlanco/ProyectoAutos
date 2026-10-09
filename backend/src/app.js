@@ -6,6 +6,7 @@ const clienteRoutes = require('./routes/cliente.routes');
 const vehiculoRoutes = require('./routes/vehiculo.routes');
 const mecanicoRoutes = require('./routes/mecanico.routes');
 const ordenRoutes = require('./routes/orden.routes');
+const dashboardRoutes = require('./routes/dashboard.routes');
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use('/api/clientes', clienteRoutes);
 app.use('/api/vehiculos', vehiculoRoutes);
 app.use('/api/mecanicos', mecanicoRoutes);
 app.use('/api/ordenes', ordenRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 // Error handler
 app.use((err, req, res, next) => {

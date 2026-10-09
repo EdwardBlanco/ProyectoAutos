@@ -6,13 +6,15 @@ const { validarJWT } = require('../middlewares/validar-jwt');
 const { 
   crearOrdenValidator, 
   actualizarOrdenValidator, 
+  estadoOrdenValidator,
   idOrdenValidator 
 } = require('../validators/orden.validator');
 
-router.get('/', ordenController.getOrdenes);
+// Filtros soportados: ?estado=activos|todas|Listo,Entregado &mecanicoId= &vehiculoId= &clienteId= &vencidas=1 &q= &limit=
+router.get('/', validarJWT, ordenController.getOrdenes);
 
 router.get('/:id', 
-  [...idOrdenValidator, validarCampos], 
+  [validarJWT, ...idOrdenValidator, validarCampos], 
   ordenController.getOrdenById
 );
 
@@ -22,7 +24,7 @@ router.post('/',
 );
 
 router.patch('/:id/estado', 
-  [validarJWT, ...idOrdenValidator, validarCampos], 
+  [validarJWT, ...idOrdenValidator, ...estadoOrdenValidator, validarCampos], 
   ordenController.updateEstadoOrden
 );
 

@@ -38,20 +38,33 @@ const seedData = async () => {
 
     // 3. Crear 10 modelos de vehículos
     const vehiculosData = [
-      { placa: 'SED101', marca: 'Toyota', modelo: 'Corolla', anio: 2020, vin: 'VIN00000000001', clienteId: cliente._id },
-      { placa: 'SED102', marca: 'Mazda', modelo: '3', anio: 2021, vin: 'VIN00000000002', clienteId: cliente._id },
-      { placa: 'SED103', marca: 'Honda', modelo: 'Civic', anio: 2019, vin: 'VIN00000000003', clienteId: cliente._id },
-      { placa: 'SED104', marca: 'Ford', modelo: 'Fiesta', anio: 2018, vin: 'VIN00000000004', clienteId: cliente._id },
-      { placa: 'SED105', marca: 'Chevrolet', modelo: 'Tracker', anio: 2022, vin: 'VIN00000000005', clienteId: cliente._id },
-      { placa: 'SED106', marca: 'Nissan', modelo: 'Sentra', anio: 2020, vin: 'VIN00000000006', clienteId: cliente._id },
-      { placa: 'SED107', marca: 'Kia', modelo: 'Rio', anio: 2021, vin: 'VIN00000000007', clienteId: cliente._id },
-      { placa: 'SED108', marca: 'Hyundai', modelo: 'Tucson', anio: 2023, vin: 'VIN00000000008', clienteId: cliente._id },
-      { placa: 'SED109', marca: 'Renault', modelo: 'Logan', anio: 2019, vin: 'VIN00000000009', clienteId: cliente._id },
-      { placa: 'SED110', marca: 'Volkswagen', modelo: 'Jetta', anio: 2022, vin: 'VIN00000000010', clienteId: cliente._id }
+      { placa: 'SED101', marca: 'Toyota', modelo: 'Corolla', anio: 2020, vin: 'VIN00000000000001', clienteId: cliente._id },
+      { placa: 'SED102', marca: 'Mazda', modelo: '3', anio: 2021, vin: 'VIN00000000000002', clienteId: cliente._id },
+      { placa: 'SED103', marca: 'Honda', modelo: 'Civic', anio: 2019, vin: 'VIN00000000000003', clienteId: cliente._id },
+      { placa: 'SED104', marca: 'Ford', modelo: 'Fiesta', anio: 2018, vin: 'VIN00000000000004', clienteId: cliente._id },
+      { placa: 'SED105', marca: 'Chevrolet', modelo: 'Tracker', anio: 2022, vin: 'VIN00000000000005', clienteId: cliente._id },
+      { placa: 'SED106', marca: 'Nissan', modelo: 'Sentra', anio: 2020, vin: 'VIN00000000000006', clienteId: cliente._id },
+      { placa: 'SED107', marca: 'Kia', modelo: 'Rio', anio: 2021, vin: 'VIN00000000000007', clienteId: cliente._id },
+      { placa: 'SED108', marca: 'Hyundai', modelo: 'Tucson', anio: 2023, vin: 'VIN00000000000008', clienteId: cliente._id },
+      { placa: 'SED109', marca: 'Renault', modelo: 'Logan', anio: 2019, vin: 'VIN00000000000009', clienteId: cliente._id },
+      { placa: 'SED110', marca: 'Volkswagen', modelo: 'Jetta', anio: 2022, vin: 'VIN00000000000010', clienteId: cliente._id }
     ];
     await Vehiculo.deleteMany({ placa: { $regex: '^SED1' } });
     await Vehiculo.insertMany(vehiculosData);
     console.log('10 vehículos agregados correctamente.');
+
+    // 4. Crear 5 Bahías
+    const Bahia = require('./models/Bahia');
+    const bahiasData = [
+      { nombre: 'Bahía 1', tipo: 'Elevador 4T', estado: 'Disponible' },
+      { nombre: 'Bahía 2', tipo: 'Elevador Tijera', estado: 'Disponible' },
+      { nombre: 'Bahía 3', tipo: 'Scan Lab', estado: 'Disponible' },
+      { nombre: 'Bahía 4', tipo: 'Fosa Express', estado: 'Disponible' },
+      { nombre: 'Bahía 5', tipo: 'Estación Clima', estado: 'Disponible' }
+    ];
+    await Bahia.deleteMany({});
+    await Bahia.insertMany(bahiasData);
+    console.log('5 bahías agregadas correctamente.');
 
     console.log('--- Seed completado ---');
     process.exit(0);

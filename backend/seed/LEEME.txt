@@ -1,0 +1,31 @@
+# Datos ficticios de taller mecánico — histórico de seis meses
+
+## Contenido
+- `01_usuarios.json`: 8 usuarios
+- `02_clientes.json`: 72 clientes
+- `03_mecanicos.json`: 12 mecánicos
+- `04_vehiculos.json`: 96 vehículos
+- `05_ordens.json`: 200 órdenes, del 8 de abril al 8 de octubre de 2026
+- `06_contadors.json`: contador consecutivo en 200
+- `datos_taller_bundle.json`: todas las colecciones dentro de un solo objeto JSON (respaldo/consulta; no se importa como una sola colección)
+
+Todos los datos son ficticios. Los campos `_id` y las referencias `clienteId`, `vehiculoId` y `mecanicoId` usan MongoDB Extended JSON (`$oid`). Las fechas usan Extended JSON (`$date`). Así se conservan como `ObjectId` y `Date` al importar con MongoDB Compass o herramientas compatibles con Extended JSON.
+
+## Importación
+1. Usa una base de datos de pruebas. No mezcles estos datos con documentos reales.
+2. Importa cada archivo numerado en una colección separada, en este orden: `usuarios`, `clientes`, `mecanicos`, `vehiculos`, `ordens` y `contadors`.
+3. Antes de importar, comprueba los nombres reales de colección usados por tu aplicación. Mongoose pluraliza automáticamente el nombre del modelo. Con los nombres de estos modelos y sin un nombre de colección explícito, los destinos predeterminados son `usuarios`, `clientes`, `mecanicos`, `vehiculos`, `ordens` y `contadors`. Si en tu código definiste otra colección en el modelo, usa ese nombre.
+4. Importa los archivos individuales, no `datos_taller_bundle.json` como una colección.
+
+## Supuestos que debes revisar en el proyecto
+- `constants/estados.js` no fue incluido en la solicitud. Se usaron estos estados: `En diagnóstico`, `Pendiente de aprobación`, `Esperando repuestos`, `En reparación`, `Listo para entrega`, `Entregada`, `Cancelada`. Si tu constante `ESTADOS` usa nombres distintos, reemplázalos antes de importar.
+- Los usuarios tienen el mismo hash bcrypt de demostración, correspondiente a la contraseña `password`. Cámbialos antes de usar cualquier entorno distinto a pruebas.
+- Los correos usan dominios de ejemplo (`example.com`) y no representan personas reales.
+- El contador utiliza `_id: "orden"` y `seq: 200`; adapta `_id` a la clave que espere tu función generadora de órdenes si usa otro nombre.
+- En los esquemas compartidos, revisa la expresión regular de `correo`: escrita literalmente como `/^\S+@\S+\\.\S+$/` puede no validar correos normales porque contiene una barra invertida adicional antes del punto. La intención usual sería `/^\S+@\S+\.\S+$/`.
+
+## Integridad
+- Cada vehículo apunta a un cliente existente.
+- Cada orden apunta a un vehículo y un mecánico existentes.
+- El estado final de cada orden coincide con el último evento de `historialEstados`.
+- Los valores de `fechaIngreso`, `fechaEntregaEstimada`, `fechaEntregaReal` y el historial se generaron con fechas coherentes para una simulación de seis meses.

@@ -1,0 +1,1826 @@
+[
+  {
+    "_id": {
+      "$oid": "04494b5487a94f7f981cdb8b"
+    },
+    "placa": "KBG482",
+    "marca": "Mazda",
+    "modelo": "Mazda 3",
+    "anio": 2022,
+    "vin": "1N5CXDL3MAA94BVNW",
+    "clienteId": {
+      "$oid": "8c8aee6b448d47e7ba50cd5c"
+    },
+    "createdAt": {
+      "$date": "2025-11-21T05:48:37.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-03-10T05:48:37.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "30dc300cb7274d78b2d52c6f"
+    },
+    "placa": "HDK119",
+    "marca": "Toyota",
+    "modelo": "Fortuner",
+    "anio": 2019,
+    "vin": "2BNLHB28GMEFF41LN",
+    "clienteId": {
+      "$oid": "0c43a5c91e58425e9262b848"
+    },
+    "createdAt": {
+      "$date": "2022-05-18T18:26:25.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-08-11T18:26:25.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ee93cebcba214e568c3ba48b"
+    },
+    "placa": "UNI101",
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "anio": 2021,
+    "vin": "DRGNTHPS672NH893S",
+    "clienteId": {
+      "$oid": "a514d3340efd4d7d953a6ae4"
+    },
+    "createdAt": {
+      "$date": "2023-05-07T15:39:25.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-07-20T15:39:25.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "236b546236fd4085a3fc4fda"
+    },
+    "placa": "EBO95J",
+    "marca": "Hero",
+    "modelo": "Eco Deluxe",
+    "anio": 2013,
+    "vin": "B1H4D8UXVG609YCEW",
+    "clienteId": {
+      "$oid": "dadb378cd9b34c1192a6a57f"
+    },
+    "createdAt": {
+      "$date": "2024-10-21T22:54:01.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-02-19T22:54:01.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f36a4905ebd84e5f8b2ef84f"
+    },
+    "placa": "KPE668",
+    "marca": "Kia",
+    "modelo": "Picanto",
+    "anio": 2024,
+    "vin": "GE9YM6TB0KPJ7YB1E",
+    "clienteId": {
+      "$oid": "eaf37704647d41a894ecc854"
+    },
+    "createdAt": {
+      "$date": "2023-04-08T20:20:02.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-05-29T20:20:02.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "18466e8b99664bdf949f4c09"
+    },
+    "placa": "QIX51J",
+    "marca": "AKT",
+    "modelo": "NKD 125",
+    "anio": 2020,
+    "vin": "2P3YF7PKFD4WD0ZWX",
+    "clienteId": {
+      "$oid": "edb7d5f93758480ea02b4841"
+    },
+    "createdAt": {
+      "$date": "2022-01-04T04:55:25.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2022-12-31T04:55:25.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7c130a523b9f47f3ba4d008d"
+    },
+    "placa": "FDB709",
+    "marca": "Chevrolet",
+    "modelo": "Onix",
+    "anio": 2021,
+    "vin": "ML9HZPFWZP3CTF01E",
+    "clienteId": {
+      "$oid": "9bf0a8705c974719b27a04b4"
+    },
+    "createdAt": {
+      "$date": "2025-03-21T06:53:59.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-02-10T06:53:59.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4c4e97a8bf9d4e1da373f40c"
+    },
+    "placa": "NPJ76F",
+    "marca": "AKT",
+    "modelo": "NKD 125",
+    "anio": 2019,
+    "vin": "PRYF7DLXBRE671PG9",
+    "clienteId": {
+      "$oid": "7e43d7aad52249bc914f4cc7"
+    },
+    "createdAt": {
+      "$date": "2022-01-28T08:21:14.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2022-10-21T08:21:14.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "76b4797f3083432fa0176c8e"
+    },
+    "placa": "SKM990",
+    "marca": "Mazda",
+    "modelo": "Mazda 2",
+    "anio": 2026,
+    "vin": "MV5EZ00YLMKCJBUT3",
+    "clienteId": {
+      "$oid": "159032b424394ea2bb4d5593"
+    },
+    "createdAt": {
+      "$date": "2025-04-21T15:51:53.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7f7796d91a9a436ebb4fd47e"
+    },
+    "placa": "LDA95P",
+    "marca": "Bajaj",
+    "modelo": "Pulsar NS 200",
+    "anio": 2016,
+    "vin": "E7BUF83VLDDYMTLBN",
+    "clienteId": {
+      "$oid": "e9676a268529419db54a1915"
+    },
+    "createdAt": {
+      "$date": "2024-09-09T22:22:33.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-05-19T22:22:33.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "74a7f1622595411ca1803154"
+    },
+    "placa": "DZL81C",
+    "marca": "Yamaha",
+    "modelo": "NMAX",
+    "anio": 2016,
+    "vin": "U6AXPFSPLHUF10F26",
+    "clienteId": {
+      "$oid": "c8a417a5c5b9406e8e35ff7e"
+    },
+    "createdAt": {
+      "$date": "2022-04-15T21:44:31.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-07-06T21:44:31.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b997dc5a1f4741d694e4cb10"
+    },
+    "placa": "CQU661",
+    "marca": "Mazda",
+    "modelo": "CX-5",
+    "anio": 2017,
+    "vin": "9R806MHG0J2W6TDX2",
+    "clienteId": {
+      "$oid": "c965ea0b040546b797b5b7a0"
+    },
+    "createdAt": {
+      "$date": "2023-10-08T13:13:18.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-08-30T13:13:18.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a0ff277eb46d4e8bb24555c5"
+    },
+    "placa": "AEB661",
+    "marca": "Toyota",
+    "modelo": "Fortuner",
+    "anio": 2010,
+    "vin": "V3RFXNX54S43W3WH3",
+    "clienteId": {
+      "$oid": "1a46fbd36ebc4b178f31b720"
+    },
+    "createdAt": {
+      "$date": "2025-11-15T04:05:22.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-04-09T04:05:22.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "58d7ce92fefb4dceaa09d21b"
+    },
+    "placa": "AQP895",
+    "marca": "Chevrolet",
+    "modelo": "Sail",
+    "anio": 2016,
+    "vin": "4MW9WMURD6AHE9VVR",
+    "clienteId": {
+      "$oid": "bd165d2c43db4404a44d017f"
+    },
+    "createdAt": {
+      "$date": "2024-09-12T00:57:25.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-03-07T00:57:25.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8b09ed30446c4be1ad76f497"
+    },
+    "placa": "BXU673",
+    "marca": "Ford",
+    "modelo": "Fiesta",
+    "anio": 2016,
+    "vin": "NX7GEPVYCA9AAR7MN",
+    "clienteId": {
+      "$oid": "a1c9b259c1c74f45bec1b657"
+    },
+    "createdAt": {
+      "$date": "2025-06-29T18:10:50.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8762d0072d5647b788780048"
+    },
+    "placa": "LEJ314",
+    "marca": "Renault",
+    "modelo": "Duster",
+    "anio": 2010,
+    "vin": "G2SPKM4TNTVUPED3K",
+    "clienteId": {
+      "$oid": "18e2b999470942a9a88ea52e"
+    },
+    "createdAt": {
+      "$date": "2025-09-08T23:41:57.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "13c13a67de96448c96383838"
+    },
+    "placa": "VMX282",
+    "marca": "Mitsubishi",
+    "modelo": "L200",
+    "anio": 2014,
+    "vin": "EUDH172WW13L9MVZ8",
+    "clienteId": {
+      "$oid": "1056d507f4914cd2a47cf77b"
+    },
+    "createdAt": {
+      "$date": "2025-12-15T11:36:00.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b4e4c456e84b4a048e4bd5af"
+    },
+    "placa": "WSZ340",
+    "marca": "Mazda",
+    "modelo": "Mazda 3",
+    "anio": 2020,
+    "vin": "XFLYYBZJUBPB7CGC1",
+    "clienteId": {
+      "$oid": "9207351d881942508fd6ae9b"
+    },
+    "createdAt": {
+      "$date": "2023-10-20T12:39:22.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-01-21T12:39:22.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2edf3bbf9e2c4cd7a5767abe"
+    },
+    "placa": "PSD699",
+    "marca": "Suzuki",
+    "modelo": "Swift",
+    "anio": 2023,
+    "vin": "N72FNXP1N38XJ9R0F",
+    "clienteId": {
+      "$oid": "acb42a7a04484f8bb3b500a9"
+    },
+    "createdAt": {
+      "$date": "2024-12-06T07:56:02.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-05-07T07:56:02.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b738035b498f44ea83cfd082"
+    },
+    "placa": "CAA236",
+    "marca": "Toyota",
+    "modelo": "Hilux",
+    "anio": 2008,
+    "vin": "W5UF7Y5TLDD3F7LDG",
+    "clienteId": {
+      "$oid": "8c474c17550148f6aa005e43"
+    },
+    "createdAt": {
+      "$date": "2025-09-10T04:27:50.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-12-18T04:27:50.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b55626748393403eb70b21ba"
+    },
+    "placa": "WXV360",
+    "marca": "Mazda",
+    "modelo": "Mazda 3",
+    "anio": 2021,
+    "vin": "J4ZJDYZ105TPVUZR6",
+    "clienteId": {
+      "$oid": "e6be5c390398458bad99ed25"
+    },
+    "createdAt": {
+      "$date": "2024-09-21T15:43:05.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-02-17T15:43:05.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5dfe6678f3774736a4ca382e"
+    },
+    "placa": "VAG491",
+    "marca": "Renault",
+    "modelo": "Logan",
+    "anio": 2016,
+    "vin": "7BYS6DCZ2S2CSCH67",
+    "clienteId": {
+      "$oid": "8ba50b45292049e49fd36166"
+    },
+    "createdAt": {
+      "$date": "2022-03-08T16:01:57.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2022-06-07T16:01:57.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "031f54f2a2104f04b2dd81d9"
+    },
+    "placa": "AHW989",
+    "marca": "Mitsubishi",
+    "modelo": "L200",
+    "anio": 2016,
+    "vin": "1HC357D85WYBAY0JP",
+    "clienteId": {
+      "$oid": "81ed5639aecb4842b6cdbcba"
+    },
+    "createdAt": {
+      "$date": "2025-01-27T01:09:27.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-10-18T01:09:27.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d23479d2bc0843bfbbd326ce"
+    },
+    "placa": "PFE48X",
+    "marca": "Yamaha",
+    "modelo": "NMAX",
+    "anio": 2007,
+    "vin": "P7KFMH0712JDH0U8G",
+    "clienteId": {
+      "$oid": "9b26289b13b24e2b8b7fe0fd"
+    },
+    "createdAt": {
+      "$date": "2025-09-11T03:34:32.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-03-02T03:34:32.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6d0461fd8cf24269986c644e"
+    },
+    "placa": "FYW732",
+    "marca": "Kia",
+    "modelo": "Rio",
+    "anio": 2016,
+    "vin": "SAVDD5NL0B4S64VN4",
+    "clienteId": {
+      "$oid": "711f668e62914963aa4cd84d"
+    },
+    "createdAt": {
+      "$date": "2025-02-15T01:52:52.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-11-15T01:52:52.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cc2da45ce74c48b0a87b35f8"
+    },
+    "placa": "VOY535",
+    "marca": "Jeep",
+    "modelo": "Renegade",
+    "anio": 2019,
+    "vin": "76D52E9MFNM2NLSJP",
+    "clienteId": {
+      "$oid": "388ca929bbfc4f3987b77821"
+    },
+    "createdAt": {
+      "$date": "2025-04-11T12:19:58.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-08-07T12:19:58.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8acb673d41d044f6a9396b05"
+    },
+    "placa": "EPV842",
+    "marca": "Nissan",
+    "modelo": "March",
+    "anio": 2026,
+    "vin": "TDU426JRBSL8UN1RC",
+    "clienteId": {
+      "$oid": "0b039c5de3d3468dad6226e1"
+    },
+    "createdAt": {
+      "$date": "2026-04-26T05:17:08.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3bac3266be7b42a3b4e24e2f"
+    },
+    "placa": "BVX11D",
+    "marca": "AKT",
+    "modelo": "NKD 125",
+    "anio": 2009,
+    "vin": "BSLSSZCG321TWVWCJ",
+    "clienteId": {
+      "$oid": "c7a6c3f994cd47a8acf9f572"
+    },
+    "createdAt": {
+      "$date": "2023-11-05T00:52:18.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-02-18T00:52:18.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "076ef0770a3b43cc96c3e6e1"
+    },
+    "placa": "ZRZ86J",
+    "marca": "TVS",
+    "modelo": "Apache RTR",
+    "anio": 2013,
+    "vin": "1UKW6UWTL5BJEGJ6P",
+    "clienteId": {
+      "$oid": "d6411d77b3394382906b39e2"
+    },
+    "createdAt": {
+      "$date": "2022-04-30T16:29:11.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-09-17T16:29:11.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9caf309615564690998261b4"
+    },
+    "placa": "JSA254",
+    "marca": "Kia",
+    "modelo": "Sportage",
+    "anio": 2016,
+    "vin": "E0JG4C6H1WJWD9ZSH",
+    "clienteId": {
+      "$oid": "aee64748f30d44e497a60d03"
+    },
+    "createdAt": {
+      "$date": "2025-09-14T01:32:50.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1f08dcbfbbef4e9f9318de71"
+    },
+    "placa": "XCF841",
+    "marca": "Jeep",
+    "modelo": "Renegade",
+    "anio": 2009,
+    "vin": "CS3GPSC6ZC8A17M50",
+    "clienteId": {
+      "$oid": "628e3bce9a0745259785df9a"
+    },
+    "createdAt": {
+      "$date": "2025-03-26T01:50:59.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-04-01T01:50:59.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0c5cc0bfeec740ef83b87116"
+    },
+    "placa": "KBX856",
+    "marca": "Kia",
+    "modelo": "Picanto",
+    "anio": 2022,
+    "vin": "B5AU86JURAAXDCYCC",
+    "clienteId": {
+      "$oid": "d4b6febc82f94051ad7169d0"
+    },
+    "createdAt": {
+      "$date": "2025-05-02T07:20:56.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-03-13T07:20:56.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "744df7eb0a52480989dbd39f"
+    },
+    "placa": "KMD868",
+    "marca": "Hyundai",
+    "modelo": "Accent",
+    "anio": 2010,
+    "vin": "XSVD367N8DD5CYLK1",
+    "clienteId": {
+      "$oid": "c9389ed1a0374eaa82de8ea7"
+    },
+    "createdAt": {
+      "$date": "2025-03-16T01:36:17.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-05-16T01:36:17.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e18d882754e6431db925342c"
+    },
+    "placa": "UWV426",
+    "marca": "Renault",
+    "modelo": "Duster",
+    "anio": 2014,
+    "vin": "8HT6YCFX2XH4Y4322",
+    "clienteId": {
+      "$oid": "d46d21d8907945648a818718"
+    },
+    "createdAt": {
+      "$date": "2022-10-07T06:15:28.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2022-11-28T06:15:28.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5642c132a7344de599cc12ac"
+    },
+    "placa": "FDA221",
+    "marca": "Mazda",
+    "modelo": "Mazda 3",
+    "anio": 2023,
+    "vin": "CJ692PP1WE4M4P7DE",
+    "clienteId": {
+      "$oid": "296b55745c29444cb2ecf78f"
+    },
+    "createdAt": {
+      "$date": "2025-05-29T20:22:34.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2fdb61278d6e47e59a0270ec"
+    },
+    "placa": "DVE916",
+    "marca": "Chevrolet",
+    "modelo": "Spark GT",
+    "anio": 2013,
+    "vin": "BPD5D1GSGWD8G38J1",
+    "clienteId": {
+      "$oid": "317eb9e8ddbd4f5ea464370a"
+    },
+    "createdAt": {
+      "$date": "2023-10-25T08:18:10.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-12-19T08:18:10.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d4cd1c95ebc4b3ab19f1ca8"
+    },
+    "placa": "GUZ94S",
+    "marca": "Bajaj",
+    "modelo": "Pulsar NS 200",
+    "anio": 2013,
+    "vin": "YCAVF6R9GNBUUYU0Y",
+    "clienteId": {
+      "$oid": "fde778d20a28488f800cb7fe"
+    },
+    "createdAt": {
+      "$date": "2022-03-05T18:20:07.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2022-11-11T18:20:07.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cd88666e4bf34ae497a15972"
+    },
+    "placa": "IVS810",
+    "marca": "Chevrolet",
+    "modelo": "Sail",
+    "anio": 2011,
+    "vin": "RMCPZDAZAZA4CU5WK",
+    "clienteId": {
+      "$oid": "67ea8567a68443558883f9fa"
+    },
+    "createdAt": {
+      "$date": "2022-09-02T06:59:12.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2022-10-05T06:59:12.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "876bcbc70fcd454eb211065d"
+    },
+    "placa": "LRP14O",
+    "marca": "TVS",
+    "modelo": "Apache RTR",
+    "anio": 2026,
+    "vin": "FDHTX9XE5T93GD7DU",
+    "clienteId": {
+      "$oid": "1046b47d7455471da13fdf9f"
+    },
+    "createdAt": {
+      "$date": "2026-03-19T16:58:00.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1d88983f387a4fdd850a05d4"
+    },
+    "placa": "TQB927",
+    "marca": "Mazda",
+    "modelo": "CX-5",
+    "anio": 2021,
+    "vin": "087XGRSZRAKT2Y793",
+    "clienteId": {
+      "$oid": "6f8bf4ab154246fba2bcb994"
+    },
+    "createdAt": {
+      "$date": "2024-02-07T13:46:12.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-07-26T13:46:12.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "eded03168bc84aa3ab001a97"
+    },
+    "placa": "ETC82H",
+    "marca": "AKT",
+    "modelo": "Dynamic Pro",
+    "anio": 2024,
+    "vin": "0WZS99F5VEWAZSJ8W",
+    "clienteId": {
+      "$oid": "4d51370b52764761a598cf11"
+    },
+    "createdAt": {
+      "$date": "2023-10-18T16:09:21.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-09-14T16:09:21.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ea9b44036bc94bc4abc40948"
+    },
+    "placa": "JXG445",
+    "marca": "Renault",
+    "modelo": "Clio",
+    "anio": 2012,
+    "vin": "YRAEWHKD51BYSKBB8",
+    "clienteId": {
+      "$oid": "a5aa41122b1b410aa5291856"
+    },
+    "createdAt": {
+      "$date": "2024-10-01T17:24:12.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-01-19T17:24:12.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d17eaefeb30e40deb90393e9"
+    },
+    "placa": "SKI440",
+    "marca": "Kia",
+    "modelo": "Picanto",
+    "anio": 2025,
+    "vin": "PRDHPSHKV3P2574WD",
+    "clienteId": {
+      "$oid": "08e365c579f84d3095ef2120"
+    },
+    "createdAt": {
+      "$date": "2026-01-23T00:38:43.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1f65e384c695415cb4d5a68b"
+    },
+    "placa": "XGH233",
+    "marca": "Kia",
+    "modelo": "Picanto",
+    "anio": 2011,
+    "vin": "V66S7AR3EAXB2B3P4",
+    "clienteId": {
+      "$oid": "a7cf625c74af4090a321eb42"
+    },
+    "createdAt": {
+      "$date": "2025-12-09T10:37:26.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d29dc02a98d14e5bac77870f"
+    },
+    "placa": "TJX298",
+    "marca": "Kia",
+    "modelo": "Sportage",
+    "anio": 2021,
+    "vin": "59D97M59TLDY38SVG",
+    "clienteId": {
+      "$oid": "e788f55f2c91434fa67a6cee"
+    },
+    "createdAt": {
+      "$date": "2025-03-19T21:24:59.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-10-02T21:24:59.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "93636c6a50eb41cf90e7d5c7"
+    },
+    "placa": "PCD617",
+    "marca": "Hyundai",
+    "modelo": "Tucson",
+    "anio": 2007,
+    "vin": "CLLZTCZL6VLB8F7S0",
+    "clienteId": {
+      "$oid": "b137972a8c7b4090b656a841"
+    },
+    "createdAt": {
+      "$date": "2022-06-28T18:28:50.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-04-06T18:28:50.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c427c971ebc047e9990b05b3"
+    },
+    "placa": "OYD804",
+    "marca": "Suzuki",
+    "modelo": "Swift",
+    "anio": 2014,
+    "vin": "C1A6SVULKENJMHY0E",
+    "clienteId": {
+      "$oid": "7418896db2f8423db8cce995"
+    },
+    "createdAt": {
+      "$date": "2024-09-28T19:59:27.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-06-29T19:59:27.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "de0f7e1b53714d1c9f0864f6"
+    },
+    "placa": "OLX527",
+    "marca": "Ford",
+    "modelo": "Escape",
+    "anio": 2026,
+    "vin": "04BKYDTXBUL5EK5DC",
+    "clienteId": {
+      "$oid": "e7d892dd9d1441efb73f121f"
+    },
+    "createdAt": {
+      "$date": "2025-06-13T01:48:28.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-03-17T01:48:28.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c7bb892db76a43a0be347cf3"
+    },
+    "placa": "TKL392",
+    "marca": "Hyundai",
+    "modelo": "i10",
+    "anio": 2014,
+    "vin": "13XHNAGEW5SC2USZD",
+    "clienteId": {
+      "$oid": "4f7008fbd5344e47966765a4"
+    },
+    "createdAt": {
+      "$date": "2026-03-24T16:56:06.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "74f0bdbcff624d148e38b71f"
+    },
+    "placa": "DZI416",
+    "marca": "Renault",
+    "modelo": "Duster",
+    "anio": 2026,
+    "vin": "1J2SRBLU4CH2PC0J7",
+    "clienteId": {
+      "$oid": "e01d77226fb84bcba3c0dec0"
+    },
+    "createdAt": {
+      "$date": "2026-01-17T22:20:56.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-07-09T22:20:56.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "acaad7e4841948149f54ca47"
+    },
+    "placa": "VEM20I",
+    "marca": "AKT",
+    "modelo": "Dynamic Pro",
+    "anio": 2008,
+    "vin": "R2AFB5Y4W1VLB58A5",
+    "clienteId": {
+      "$oid": "5d51f5cc709b4496a15eecdd"
+    },
+    "createdAt": {
+      "$date": "2023-08-25T05:32:29.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-11-13T05:32:29.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b67ea179112046b3a099b106"
+    },
+    "placa": "KQI572",
+    "marca": "Renault",
+    "modelo": "Sandero",
+    "anio": 2011,
+    "vin": "LGUBX1N54D29STZP3",
+    "clienteId": {
+      "$oid": "ad895f72c3af4300862c47e3"
+    },
+    "createdAt": {
+      "$date": "2024-10-26T07:38:34.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-10-31T07:38:34.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f37cd5e523d04ea9bcaad362"
+    },
+    "placa": "AWR741",
+    "marca": "Honda",
+    "modelo": "CR-V",
+    "anio": 2008,
+    "vin": "CY10BYKK7XARUNZ6E",
+    "clienteId": {
+      "$oid": "f8e0b45a4e264eefac104782"
+    },
+    "createdAt": {
+      "$date": "2026-02-26T02:55:48.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-06-11T02:55:48.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9c48740edf3847268cae765b"
+    },
+    "placa": "MSP906",
+    "marca": "Renault",
+    "modelo": "Sandero",
+    "anio": 2021,
+    "vin": "T4AY8W7LN019303CK",
+    "clienteId": {
+      "$oid": "10f7a1fe35cd4a87bc5e9328"
+    },
+    "createdAt": {
+      "$date": "2026-05-02T17:41:53.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0ec83a2560e74804b585d401"
+    },
+    "placa": "ZJI199",
+    "marca": "Renault",
+    "modelo": "Sandero",
+    "anio": 2007,
+    "vin": "FM13Y177RLYBWDXJV",
+    "clienteId": {
+      "$oid": "38803556e6af4212a2342095"
+    },
+    "createdAt": {
+      "$date": "2023-07-21T09:45:22.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-04-15T09:45:22.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f37898cf0866484aa28f83fe"
+    },
+    "placa": "JUU448",
+    "marca": "Kia",
+    "modelo": "Picanto",
+    "anio": 2026,
+    "vin": "VPDMJ1WXY4P0RK7UH",
+    "clienteId": {
+      "$oid": "b502a66b7a0b424c949b665a"
+    },
+    "createdAt": {
+      "$date": "2024-03-15T17:51:26.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-04-27T17:51:26.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ebd1398999474ad3ba88e09f"
+    },
+    "placa": "SHO352",
+    "marca": "Hyundai",
+    "modelo": "i10",
+    "anio": 2013,
+    "vin": "KFKAA5JEVYUXG6XWF",
+    "clienteId": {
+      "$oid": "9e2492328672446bbe3d8b1f"
+    },
+    "createdAt": {
+      "$date": "2022-07-30T05:22:53.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-12-19T05:22:53.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "110a8552d2d44e8fa72d741d"
+    },
+    "placa": "MPC868",
+    "marca": "Hyundai",
+    "modelo": "i10",
+    "anio": 2016,
+    "vin": "ZLR830R38LNXD0WPD",
+    "clienteId": {
+      "$oid": "c6ddf8d54f614665933ca01e"
+    },
+    "createdAt": {
+      "$date": "2025-04-15T04:25:06.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-12-22T04:25:06.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60c686319af5441787efab7a"
+    },
+    "placa": "XQR626",
+    "marca": "Honda",
+    "modelo": "Civic",
+    "anio": 2017,
+    "vin": "R4J4KZX9Z18SHSD50",
+    "clienteId": {
+      "$oid": "8dcd75d30dfe4c08971a9561"
+    },
+    "createdAt": {
+      "$date": "2023-01-08T11:54:52.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-11-03T11:54:52.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a07c1879935149978a530b66"
+    },
+    "placa": "MZV882",
+    "marca": "Suzuki",
+    "modelo": "Vitara",
+    "anio": 2010,
+    "vin": "XN1WSAPCGCWUDJW2W",
+    "clienteId": {
+      "$oid": "33ab212307f34ec0bd7bc72c"
+    },
+    "createdAt": {
+      "$date": "2025-06-06T00:16:30.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-07-09T00:16:30.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3a93b95ee39d4117bb77a69c"
+    },
+    "placa": "QGH751",
+    "marca": "Chevrolet",
+    "modelo": "Onix",
+    "anio": 2015,
+    "vin": "H8PFNBNB3YZS56A5D",
+    "clienteId": {
+      "$oid": "e9fdbc2aacd8485ebfa3befa"
+    },
+    "createdAt": {
+      "$date": "2024-09-25T04:18:44.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-04-22T04:18:44.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "55664b2bbf904c91960682ab"
+    },
+    "placa": "SIG790",
+    "marca": "Nissan",
+    "modelo": "Frontier",
+    "anio": 2021,
+    "vin": "GU77JML8SZLSLH62V",
+    "clienteId": {
+      "$oid": "5e8a565d7b1f4cc1a147643a"
+    },
+    "createdAt": {
+      "$date": "2024-04-26T15:50:51.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-12-06T15:50:51.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b32ac01b723c4eee81e0b170"
+    },
+    "placa": "NRT694",
+    "marca": "Jeep",
+    "modelo": "Renegade",
+    "anio": 2024,
+    "vin": "49D1HFDEJHSJ4L4K6",
+    "clienteId": {
+      "$oid": "995de929a90a43e28c6d16b3"
+    },
+    "createdAt": {
+      "$date": "2023-05-03T08:06:55.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-11-22T08:06:55.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1a5ca578f6014dba979654cc"
+    },
+    "placa": "YUE20J",
+    "marca": "TVS",
+    "modelo": "Apache RTR",
+    "anio": 2014,
+    "vin": "4BN2YN41RYMKWEAC8",
+    "clienteId": {
+      "$oid": "c1d6ea523dbb457dac05e4cc"
+    },
+    "createdAt": {
+      "$date": "2022-07-31T16:38:21.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-03-14T16:38:21.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7e2a7436ec8d4bf3972c73e6"
+    },
+    "placa": "OVY82F",
+    "marca": "Bajaj",
+    "modelo": "Boxer CT 100",
+    "anio": 2009,
+    "vin": "30F7JVNBFC0MPXZFY",
+    "clienteId": {
+      "$oid": "9bbf909c25404ccf9b4068c9"
+    },
+    "createdAt": {
+      "$date": "2025-08-18T12:21:28.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "389476c89ada4af8bafcf41a"
+    },
+    "placa": "UXJ378",
+    "marca": "Renault",
+    "modelo": "Sandero",
+    "anio": 2023,
+    "vin": "TFCMXRK510EG6VBG8",
+    "clienteId": {
+      "$oid": "5e40627e98f543f1856d7a90"
+    },
+    "createdAt": {
+      "$date": "2024-07-05T00:10:04.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-04-01T00:10:04.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "470d9bb7d00546bbaa411143"
+    },
+    "placa": "HPM88P",
+    "marca": "AKT",
+    "modelo": "NKD 125",
+    "anio": 2024,
+    "vin": "BS7815WAH7PGDG7B0",
+    "clienteId": {
+      "$oid": "238ef95833a741ddaafa3a08"
+    },
+    "createdAt": {
+      "$date": "2026-03-16T05:46:57.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-03-24T05:46:57.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "97ba0782f9554cd78388e46d"
+    },
+    "placa": "QDL352",
+    "marca": "Mazda",
+    "modelo": "Mazda 2",
+    "anio": 2019,
+    "vin": "Z4MEEAD2CT86790HN",
+    "clienteId": {
+      "$oid": "af4c17203ac64f8e98622607"
+    },
+    "createdAt": {
+      "$date": "2022-03-01T07:33:49.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-07-16T07:33:49.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d3827ee51e09439299d697e4"
+    },
+    "placa": "QUQ172",
+    "marca": "Hyundai",
+    "modelo": "i10",
+    "anio": 2023,
+    "vin": "WZD6F98HWHSE2GLA8",
+    "clienteId": {
+      "$oid": "4932e3463ecc4d37b96dd58c"
+    },
+    "createdAt": {
+      "$date": "2026-03-21T05:26:06.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "43adb80fe1ad45aab62cac57"
+    },
+    "placa": "XKE688",
+    "marca": "Mazda",
+    "modelo": "CX-5",
+    "anio": 2025,
+    "vin": "38PAHJP416JP7V11H",
+    "clienteId": {
+      "$oid": "0dea515f907b4579b093c53e"
+    },
+    "createdAt": {
+      "$date": "2024-01-15T09:42:57.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-07-12T09:42:57.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4fdbc49e47464a06b062d18d"
+    },
+    "placa": "LAV384",
+    "marca": "Honda",
+    "modelo": "CR-V",
+    "anio": 2026,
+    "vin": "29HEU9FR5NPEC3MJV",
+    "clienteId": {
+      "$oid": "d4c6e0c4486f4be387436f41"
+    },
+    "createdAt": {
+      "$date": "2022-04-02T11:17:19.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2022-05-19T11:17:19.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a521b5ba053e4ae48e2d7130"
+    },
+    "placa": "CJL461",
+    "marca": "Renault",
+    "modelo": "Kwid",
+    "anio": 2018,
+    "vin": "0EWV9VU3RJX2HJY7S",
+    "clienteId": {
+      "$oid": "c12beb3ee65240a59a58de64"
+    },
+    "createdAt": {
+      "$date": "2025-12-17T09:18:37.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-05-22T09:18:37.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7eb0c295eb1044e6a43d2847"
+    },
+    "placa": "MRN676",
+    "marca": "Toyota",
+    "modelo": "Fortuner",
+    "anio": 2007,
+    "vin": "K3ZWBBBPDU20C1XC4",
+    "clienteId": {
+      "$oid": "a7cf625c74af4090a321eb42"
+    },
+    "createdAt": {
+      "$date": "2025-04-12T16:29:39.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-05-01T16:29:39.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9f986113c1af49a0b66d68ae"
+    },
+    "placa": "WLE948",
+    "marca": "Honda",
+    "modelo": "CR-V",
+    "anio": 2015,
+    "vin": "EMRCLU9GWU80TUEMZ",
+    "clienteId": {
+      "$oid": "5d51f5cc709b4496a15eecdd"
+    },
+    "createdAt": {
+      "$date": "2024-04-23T23:15:24.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-01-12T23:15:24.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8c1f5a9e799d4957a0c21b46"
+    },
+    "placa": "SJI456",
+    "marca": "Nissan",
+    "modelo": "Frontier",
+    "anio": 2015,
+    "vin": "SMZZJ6N2XRKCW3MRS",
+    "clienteId": {
+      "$oid": "e7d892dd9d1441efb73f121f"
+    },
+    "createdAt": {
+      "$date": "2023-03-24T06:32:01.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-03-01T06:32:01.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c678f1c19fb24a138c9c8cbe"
+    },
+    "placa": "BYN804",
+    "marca": "Toyota",
+    "modelo": "Fortuner",
+    "anio": 2011,
+    "vin": "S8848E00H0J03UYWH",
+    "clienteId": {
+      "$oid": "e7d892dd9d1441efb73f121f"
+    },
+    "createdAt": {
+      "$date": "2022-12-21T05:05:29.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-10-18T05:05:29.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f0a4136732cc463fa0e8bc4d"
+    },
+    "placa": "DQJ232",
+    "marca": "Volkswagen",
+    "modelo": "Polo",
+    "anio": 2023,
+    "vin": "4G36PBDWJZGW3U8G7",
+    "clienteId": {
+      "$oid": "f8e0b45a4e264eefac104782"
+    },
+    "createdAt": {
+      "$date": "2024-12-18T11:10:48.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-07-14T11:10:48.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1ec1142f8c524cfaa0516848"
+    },
+    "placa": "UCA925",
+    "marca": "Fiat",
+    "modelo": "Uno",
+    "anio": 2013,
+    "vin": "GVPUP8PRUK2H7F469",
+    "clienteId": {
+      "$oid": "995de929a90a43e28c6d16b3"
+    },
+    "createdAt": {
+      "$date": "2025-08-12T04:35:14.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9d2f605f7a084250975a2be6"
+    },
+    "placa": "ZCM750",
+    "marca": "Peugeot",
+    "modelo": "208",
+    "anio": 2024,
+    "vin": "HVH9W8A4FTPR4UTJ6",
+    "clienteId": {
+      "$oid": "317eb9e8ddbd4f5ea464370a"
+    },
+    "createdAt": {
+      "$date": "2022-10-16T06:56:13.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-02-19T06:56:13.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f72ea942b5bb40f68c5e119c"
+    },
+    "placa": "AXP212",
+    "marca": "Toyota",
+    "modelo": "Fortuner",
+    "anio": 2015,
+    "vin": "AKU3XYHJFGGWLRHPL",
+    "clienteId": {
+      "$oid": "d6411d77b3394382906b39e2"
+    },
+    "createdAt": {
+      "$date": "2025-08-09T17:27:28.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-08-13T17:27:28.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "040c8b16b0e0423091b1d6fb"
+    },
+    "placa": "XTE97X",
+    "marca": "Yamaha",
+    "modelo": "FZ 2.0",
+    "anio": 2012,
+    "vin": "WS9Y5PWHTLT0CLV39",
+    "clienteId": {
+      "$oid": "0dea515f907b4579b093c53e"
+    },
+    "createdAt": {
+      "$date": "2026-05-17T16:27:32.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "00150d586d7a464e929c8924"
+    },
+    "placa": "DIG628",
+    "marca": "Kia",
+    "modelo": "Sportage",
+    "anio": 2021,
+    "vin": "B5N9AF75WXABD2KRD",
+    "clienteId": {
+      "$oid": "e6be5c390398458bad99ed25"
+    },
+    "createdAt": {
+      "$date": "2022-03-03T04:43:07.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-03-30T04:43:07.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "09b407d2fac24b448ed54b66"
+    },
+    "placa": "WAT970",
+    "marca": "Ford",
+    "modelo": "Escape",
+    "anio": 2013,
+    "vin": "V1S0YGJ69K570J6BA",
+    "clienteId": {
+      "$oid": "eaf37704647d41a894ecc854"
+    },
+    "createdAt": {
+      "$date": "2024-07-03T17:16:20.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-01-26T17:16:20.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "895eec9a0c6d406fabd3be07"
+    },
+    "placa": "KUA24Z",
+    "marca": "Yamaha",
+    "modelo": "FZ 2.0",
+    "anio": 2022,
+    "vin": "B3SM4HU6VD0X2PZYV",
+    "clienteId": {
+      "$oid": "388ca929bbfc4f3987b77821"
+    },
+    "createdAt": {
+      "$date": "2026-02-26T03:11:42.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e809481733514117a4fcd610"
+    },
+    "placa": "JKL78T",
+    "marca": "Yamaha",
+    "modelo": "Crypton",
+    "anio": 2024,
+    "vin": "VS6K186PETL4DW9JX",
+    "clienteId": {
+      "$oid": "18e2b999470942a9a88ea52e"
+    },
+    "createdAt": {
+      "$date": "2023-06-04T14:04:24.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-06-11T14:04:24.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e07ba8e763334e6da04fb5e3"
+    },
+    "placa": "VBH74D",
+    "marca": "Bajaj",
+    "modelo": "Pulsar NS 200",
+    "anio": 2014,
+    "vin": "W5G9KYM8Z5JL0T3HH",
+    "clienteId": {
+      "$oid": "317eb9e8ddbd4f5ea464370a"
+    },
+    "createdAt": {
+      "$date": "2025-03-23T14:50:39.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-12-10T14:50:39.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "638b62f8612c410fb328abc3"
+    },
+    "placa": "FWR793",
+    "marca": "Hyundai",
+    "modelo": "Accent",
+    "anio": 2008,
+    "vin": "60EERKBR14Y4119AS",
+    "clienteId": {
+      "$oid": "a1c9b259c1c74f45bec1b657"
+    },
+    "createdAt": {
+      "$date": "2022-04-01T14:04:15.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-02-05T14:04:15.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "dc61e3b490b045e683741ef8"
+    },
+    "placa": "WYS805",
+    "marca": "Peugeot",
+    "modelo": "208",
+    "anio": 2014,
+    "vin": "CJ3XNCN2G17AD05CV",
+    "clienteId": {
+      "$oid": "0c43a5c91e58425e9262b848"
+    },
+    "createdAt": {
+      "$date": "2023-09-22T09:58:55.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-03-07T09:58:55.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b76b8c6a6f604dfc932bd273"
+    },
+    "placa": "FWU983",
+    "marca": "Volkswagen",
+    "modelo": "Polo",
+    "anio": 2024,
+    "vin": "24THV9GGF80MM7NP6",
+    "clienteId": {
+      "$oid": "08e365c579f84d3095ef2120"
+    },
+    "createdAt": {
+      "$date": "2022-09-11T15:10:57.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-11-17T15:10:57.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "85ca3fa08e9a4b178482ddff"
+    },
+    "placa": "BOR71Z",
+    "marca": "Bajaj",
+    "modelo": "Boxer CT 100",
+    "anio": 2015,
+    "vin": "584UGP6MUGR9BHBML",
+    "clienteId": {
+      "$oid": "e9676a268529419db54a1915"
+    },
+    "createdAt": {
+      "$date": "2026-06-01T00:32:43.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "95c000ac19984a4ab38275f5"
+    },
+    "placa": "BMB89R",
+    "marca": "Kawasaki",
+    "modelo": "Versys 300",
+    "anio": 2025,
+    "vin": "TL53L33A5ZR865W40",
+    "clienteId": {
+      "$oid": "b137972a8c7b4090b656a841"
+    },
+    "createdAt": {
+      "$date": "2025-11-08T11:56:07.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-11-28T11:56:07.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "94d22766dabd4b2688cf6dea"
+    },
+    "placa": "IQX814",
+    "marca": "Chevrolet",
+    "modelo": "Sail",
+    "anio": 2016,
+    "vin": "EVT9RKH9PZ67FHJ8S",
+    "clienteId": {
+      "$oid": "a1c9b259c1c74f45bec1b657"
+    },
+    "createdAt": {
+      "$date": "2024-08-21T08:14:52.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2025-03-20T08:14:52.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "08a1bf441f3c42e5a83d31fe"
+    },
+    "placa": "FYS59V",
+    "marca": "Yamaha",
+    "modelo": "NMAX",
+    "anio": 2012,
+    "vin": "TC01UZTBC649RP44K",
+    "clienteId": {
+      "$oid": "238ef95833a741ddaafa3a08"
+    },
+    "createdAt": {
+      "$date": "2022-06-05T01:51:59.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2023-01-06T01:51:59.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "bb1eda40c54144f2aea90ebd"
+    },
+    "placa": "CUW489",
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "anio": 2007,
+    "vin": "LWN4SHMALD1H28EV2",
+    "clienteId": {
+      "$oid": "7e43d7aad52249bc914f4cc7"
+    },
+    "createdAt": {
+      "$date": "2024-02-14T19:48:06.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2024-12-02T19:48:06.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "23d5d30af3b64126afb46a1c"
+    },
+    "placa": "VZZ103",
+    "marca": "Chevrolet",
+    "modelo": "D-Max",
+    "anio": 2007,
+    "vin": "TEA300HX24CJ30B72",
+    "clienteId": {
+      "$oid": "e9676a268529419db54a1915"
+    },
+    "createdAt": {
+      "$date": "2025-08-20T05:01:00.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "accba900642940048a95a949"
+    },
+    "placa": "OQI907",
+    "marca": "Nissan",
+    "modelo": "Versa",
+    "anio": 2016,
+    "vin": "LLFD8FZEBZV61ANDK",
+    "clienteId": {
+      "$oid": "9bbf909c25404ccf9b4068c9"
+    },
+    "createdAt": {
+      "$date": "2026-05-29T01:15:01.000-05:00"
+    },
+    "updatedAt": {
+      "$date": "2026-10-07T19:00:00.000-05:00"
+    }
+  }
+]

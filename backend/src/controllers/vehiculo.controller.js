@@ -5,7 +5,8 @@ exports.createVehiculo = async (req, res) => {
     const vehiculo = await vehiculoService.createVehiculo(req.body);
     res.status(201).json(vehiculo);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    const errorProcesado = require('../helpers/errores').procesarErrorMongoose(error);
+    res.status(errorProcesado.status || 400).json({ message: errorProcesado.message });
   }
 };
 
@@ -43,7 +44,7 @@ exports.updateVehiculo = async (req, res) => {
     if (!vehiculo) return res.status(404).json({ message: 'Vehículo no encontrado' });
     res.json(vehiculo);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(error.status || 400).json({ message: error.message });
   }
 };
 
@@ -53,6 +54,6 @@ exports.deleteVehiculo = async (req, res) => {
     if (!vehiculo) return res.status(404).json({ message: 'Vehículo no encontrado' });
     res.json({ message: 'Vehículo eliminado correctamente' });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(error.status || 500).json({ message: error.message });
   }
 };
