@@ -1,21 +1,12 @@
 <template>
-  <div
-    class="placa-badge-wrapper inline-flex items-center"
-    :class="[
-      `placa--${variant}`,
-      `placa--${size}`,
-      { 'cursor-pointer': copyable || clickable, 'hover-scale-sm': copyable || clickable }
-    ]"
-    @click="handleClick"
-  >
+  <div class="placa-badge-wrapper inline-flex items-center" :class="[
+    `placa--${variant}`,
+    `placa--${size}`,
+    { 'cursor-pointer': copyable || clickable, 'hover-scale-sm': copyable || clickable }
+  ]" @click="handleClick">
     <span class="placa-text">{{ displayPlaca }}</span>
 
-    <q-icon
-      v-if="copyable"
-      name="content_copy"
-      class="q-ml-xs copy-icon opacity-60"
-      :size="iconSize"
-    />
+    <q-icon v-if="copyable" name="content_copy" class="q-ml-xs copy-icon opacity-60" :size="iconSize" />
 
     <q-tooltip v-if="copyable && !copied">
       {{ tooltipText }}
@@ -123,28 +114,12 @@ async function handleClick(event) {
 
 /* Variantes */
 .placa--standard {
-  background: #111827;
-  color: #ffffff;
+  background: #f1bc0e;
+  color: #070707;
   border-radius: 4px;
   letter-spacing: 1.2px;
 }
 
-.placa--pro {
-  background: #111827;
-  color: #fbbf24;
-  border: 2px solid #374151;
-  border-radius: 6px;
-  letter-spacing: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.placa--outline {
-  background: #ffffff;
-  color: #111827;
-  border: 1px solid #94a3b8;
-  border-radius: 4px;
-  letter-spacing: 1px;
-}
 
 /* Tamaños */
 .placa--sm {
@@ -168,4 +143,3 @@ async function handleClick(event) {
   filter: brightness(1.15);
 }
 </style>
-
