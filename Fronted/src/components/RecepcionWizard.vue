@@ -109,8 +109,40 @@
               <q-form ref="formVehiculo">
                 <div class="row q-col-gutter-sm">
                   <div class="col-6"><q-input v-model="vehiculo.placa" label="Placa *" outlined dense class="text-uppercase" :rules="[val => !!val || 'Requerido']" /></div>
-                  <div class="col-6"><q-input v-model="vehiculo.marca" label="Marca *" outlined dense :rules="[val => !!val || 'Requerido']" /></div>
-                  <div class="col-6"><q-input v-model="vehiculo.modelo" label="Modelo *" outlined dense :rules="[val => !!val || 'Requerido']" /></div>
+                  <div class="col-6">
+                    <q-select
+                      v-model="vehiculo.marca"
+                      :options="marcasOptions"
+                      label="Marca *"
+                      outlined
+                      dense
+                      use-input
+                      fill-input
+                      hide-selected
+                      input-debounce="0"
+                      new-value-mode="add-unique"
+                      @filter="filterMarcas"
+                      @update:model-value="onMarcaChange"
+                      :rules="[val => !!val || 'Requerido']"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <q-select
+                      v-model="vehiculo.modelo"
+                      :options="modelosOptions"
+                      label="Modelo *"
+                      outlined
+                      dense
+                      use-input
+                      fill-input
+                      hide-selected
+                      input-debounce="0"
+                      new-value-mode="add-unique"
+                      @filter="filterModelos"
+                      :rules="[val => !!val || 'Requerido']"
+                      :hint="vehiculo.marca ? `Sugerencias para ${vehiculo.marca}` : 'O escribe'"
+                    />
+                  </div>
                   <div class="col-6"><q-input v-model="vehiculo.anio" label="Año *" type="number" outlined dense :rules="[val => !!val || 'Requerido']" /></div>
                 </div>
               </q-form>
@@ -180,6 +212,7 @@ import { ref, watch } from 'vue'
 import { useQuasar } from 'quasar'
 import api from '@/services/api'
 import { useEventBus } from '@vueuse/core'
+import { getMarcas, getModelosPorMarca } from '@/constants/vehiculos'
 
 const $q = useQuasar()
 const props = defineProps({ modelValue: Boolean, prefill: Object })
@@ -207,6 +240,43 @@ const formOrden = ref(null)
 const clienteSelect = ref(null)
 const cliente = ref({ _id: null, nombre: '', cedula: '', telefono: '', correo: '' })
 const clientesOptions = ref([])
+
+const marcasList = getMarcas()
+const marcasOptions = ref(marcasList)
+const modelosOptions = ref([])
+
+function filterMarcas(val, update) {
+  if (!val) {
+    update(() => { marcasOptions.value = marcasList })
+    return
+  }
+  update(() => {
+    const needle = val.toLowerCase()
+    marcasOptions.value = marcasList.filter(v => v.toLowerCase().includes(needle))
+  })
+}
+
+function onMarcaChange(val) {
+  vehiculo.value.marca = val || ''
+  vehiculo.value.modelo = ''
+  if (val) {
+    modelosOptions.value = getModelosPorMarca(val)
+  } else {
+    modelosOptions.value = []
+  }
+}
+
+function filterModelos(val, update) {
+  const allModels = getModelosPorMarca(vehiculo.value.marca)
+  if (!val) {
+    update(() => { modelosOptions.value = allModels })
+    return
+  }
+  update(() => {
+    const needle = val.toLowerCase()
+    modelosOptions.value = allModels.filter(v => v.toLowerCase().includes(needle))
+  })
+}
 
 const vehiculoSelect = ref(null)
 const vehiculo = ref({ _id: null, placa: '', marca: '', modelo: '', anio: '' })

@@ -3,80 +3,95 @@
     <div class="page-shell">
 
 
-      <!-- 1. TITULO -->
-      <h1 class="text-h4 text-weight-bolder q-my-none text-dark tracking-tight q-mb-md">Directorio de Clientes</h1>
+      <!-- 1. HEADER (TITULO & ACCION) -->
+      <PageHeader
+        title="Directorio de Clientes"
+        subtitle="Gestión y directorio de propietarios de vehículos del taller"
+        icon="people"
+        icon-bg="blue-1"
+        icon-color="primary"
+        :badge="`${clientes.length} Registrados`"
+      >
+        <template #actions>
+          <q-btn
+            color="primary"
+            icon="add"
+            label="Nuevo Cliente"
+            unelevated
+            class="rounded-button shadow-2 q-px-lg q-py-sm text-weight-bold transition-all hover-scale"
+            no-caps
+            @click="openForm()"
+          />
+        </template>
+      </PageHeader>
 
-      <!-- 2. BOTON "+" -->
-      <div class="q-mb-md">
-        <q-btn v-if="!isCreationOpen" color="primary" icon="add" label="Nuevo Cliente" unelevated
-          class="rounded-button shadow-3 q-px-lg q-py-sm text-weight-bold transition-all hover-scale" no-caps
-          @click="openForm()" />
-      </div>
-
-      <!-- 3. INPUT DE BUSQUEDA -->
-      <div class="q-mb-md search-container">
-        <q-input v-model="search" outlined placeholder="Buscar por placa (ej: 8492-KTL), cliente o número de orden..."
-          class="bg-white search-input" dense @update:model-value="onSearch">
-          <template v-slot:prepend>
-            <q-icon name="search" color="grey-6" />
-          </template>
-        </q-input>
-      </div>
-
-      <!-- 4. REGISTRADOS (#) -->
-      <div class="text-subtitle2 text-grey-8 q-mb-md font-medium">
-        Registrados ({{ clientes.length }})
-      </div>
-
-      <!-- INLINE WORKBENCH (Formulario de Creación/Edición) -->
-      <transition name="q-transition--slide-down">
-        <div v-if="isCreationOpen" class="q-mb-xl">
-          <q-card flat bordered class="bg-white">
-            <q-card-section class="row items-center justify-between q-pa-md border-bottom bg-grey-1">
-              <div class="row items-center">
-                <q-avatar color="primary" text-color="white" icon="person" size="md" class="q-mr-md shadow-2" />
-                <div>
-                  <div class="text-h6 text-bold text-dark">{{ isEditing ? 'Editar Cliente' : 'Nuevo Cliente' }}</div>
-                  <div class="text-caption text-grey-6">Complete la información del propietario</div>
-                </div>
-              </div>
-              <q-btn icon="close" flat round dense color="grey-8" @click="isCreationOpen = false" />
-            </q-card-section>
-
-            <q-card-section class="q-pa-lg">
-              <q-form @submit="saveCliente" class="row q-col-gutter-lg">
-                <div class="col-12 col-md-6">
-                  <q-input v-model="formData.nombre" label="Nombre Completo *" outlined dense
-                    :rules="[val => !!val || 'Requerido']" class="rounded-input" />
-                </div>
-                <div class="col-12 col-md-6">
-                  <q-input v-model="formData.cedula" label="Cédula/Doc *" outlined dense
-                    :rules="[val => !!val || 'Requerido']" class="rounded-input" />
-                </div>
-                <div class="col-12 col-md-4">
-                  <q-input v-model="formData.telefono" label="Teléfono *" outlined dense
-                    :rules="[val => !!val || 'Requerido']" class="rounded-input" />
-                </div>
-                <div class="col-12 col-md-4">
-                  <q-input v-model="formData.correo" label="Correo Electrónico *" type="email" outlined dense
-                    :rules="[val => !!val || 'Requerido']" class="rounded-input" />
-                </div>
-                <div class="col-12 col-md-4">
-                  <q-input v-model="formData.direccion" label="Dirección" outlined dense class="rounded-input" />
-                </div>
-
-                <div class="col-12 text-right q-mt-md">
-                  <q-btn label="Cancelar" color="grey-7" flat @click="isCreationOpen = false"
-                    class="q-mr-md text-weight-bold rounded-button" no-caps />
-                  <q-btn :label="isEditing ? 'Guardar Cambios' : 'Registrar Cliente'" type="submit" color="primary"
-                    unelevated :loading="saving" class="text-weight-bold rounded-button shadow-2 q-px-lg" no-caps
-                    icon="save" />
-                </div>
-              </q-form>
-            </q-card-section>
-          </q-card>
+      <!-- 2. INPUT DE BUSQUEDA & CONTROLES -->
+      <div class="row items-center justify-between q-mb-md q-col-gutter-md">
+        <div class="col-12 col-md-6 col-lg-5">
+          <q-input
+            v-model="search"
+            outlined
+            placeholder="Buscar por nombre, cédula, teléfono o correo..."
+            class="bg-white rounded-input shadow-1 w-full"
+            dense
+            @update:model-value="onSearch"
+            clearable
+          >
+            <template v-slot:prepend>
+              <q-icon name="search" color="grey-6" size="18px" />
+            </template>
+          </q-input>
         </div>
-      </transition>
+      </div>
+
+      <!-- MODAL DIALOG: NUEVO / EDITAR CLIENTE -->
+      <q-dialog v-model="isCreationOpen" persistent transition-show="scale" transition-hide="scale">
+        <q-card style="width: 760px; max-width: 95vw; border-radius: 16px;" class="bg-white shadow-10 overflow-hidden">
+          <q-card-section class="row items-center justify-between q-pa-md border-bottom bg-grey-1">
+            <div class="row items-center">
+              <q-avatar color="primary" text-color="white" icon="person" size="md" class="q-mr-md shadow-2" />
+              <div>
+                <div class="text-h6 text-bold text-dark">{{ isEditing ? 'Editar Cliente' : 'Nuevo Cliente' }}</div>
+                <div class="text-caption text-grey-6">Complete la información del propietario</div>
+              </div>
+            </div>
+            <q-btn icon="close" flat round dense color="grey-8" v-close-popup />
+          </q-card-section>
+
+          <q-card-section class="q-pa-lg">
+            <q-form @submit="saveCliente" class="row q-col-gutter-lg">
+              <div class="col-12 col-md-6">
+                <q-input v-model="formData.nombre" label="Nombre Completo *" outlined dense
+                  :rules="[val => !!val || 'Requerido']" class="rounded-input" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="formData.cedula" label="Cédula/Doc *" outlined dense
+                  :rules="[val => !!val || 'Requerido']" class="rounded-input" />
+              </div>
+              <div class="col-12 col-md-4">
+                <q-input v-model="formData.telefono" label="Teléfono *" outlined dense
+                  :rules="[val => !!val || 'Requerido']" class="rounded-input" />
+              </div>
+              <div class="col-12 col-md-4">
+                <q-input v-model="formData.correo" label="Correo Electrónico *" type="email" outlined dense
+                  :rules="[val => !!val || 'Requerido']" class="rounded-input" />
+              </div>
+              <div class="col-12 col-md-4">
+                <q-input v-model="formData.direccion" label="Dirección *" outlined dense class="rounded-input"
+                  :rules="[val => !!val || 'Requerido', val => (val && val.length >= 5) || 'Mínimo 5 caracteres']" />
+              </div>
+
+              <div class="col-12 text-right q-mt-md">
+                <q-btn label="Cancelar" color="grey-7" flat v-close-popup
+                  class="q-mr-md text-weight-bold rounded-button" no-caps />
+                <q-btn :label="isEditing ? 'Guardar Cambios' : 'Registrar Cliente'" type="submit" color="primary"
+                  unelevated :loading="saving" class="text-weight-bold rounded-button shadow-2 q-px-lg" no-caps
+                  icon="save" />
+              </div>
+            </q-form>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
 
       <!-- Client Cards Grid -->
       <div v-if="loading" class="row justify-center q-pa-xl">
@@ -90,7 +105,7 @@
       </div>
 
       <div v-else class="row q-col-gutter-lg">
-        <div v-for="cliente in clientes" :key="cliente._id" class="col-12 col-md-6 col-lg-4 d-flex">
+        <div v-for="cliente in clientes" :key="cliente._id" class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex">
           <q-card flat bordered
             class="client-card bg-white flex flex-col full-width overflow-hidden transition-all hover-up">
 
@@ -161,7 +176,7 @@
                     <div class="row justify-between items-start">
                       <div class="col">
                         <div class="row items-center q-mb-xs">
-                          <q-badge color="dark" class="text-weight-bold q-mr-sm placa-badge">{{ v.placa }}</q-badge>
+                          <PlacaBadge :placa="v.placa" size="sm" class="q-mr-sm" />
                           <span class="text-body2 text-weight-medium text-dark">{{ v.marca || 'Vehículo' }} {{ v.modelo
                             || '' }} {{ v.anio ? `(${v.anio})` : '' }}</span>
                         </div>
@@ -198,13 +213,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import { useQuasar } from 'quasar'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import api from '@/services/api'
+import PageHeader from '@/components/PageHeader.vue'
+import PlacaBadge from '@/components/PlacaBadge.vue'
 
 const $q = useQuasar()
 const router = useRouter()
+const route = useRoute()
 
 // State
 const clientes = ref([])
@@ -245,8 +263,24 @@ const onSearch = (val) => {
   }, 300)
 }
 
+watch(
+  () => route.query.q,
+  (newQ) => {
+    if (newQ !== undefined) {
+      search.value = String(newQ || '')
+      fetchClientes(search.value)
+    }
+  }
+)
+
 onMounted(() => {
-  fetchClientes()
+  if (route.query?.q) {
+    search.value = String(route.query.q)
+  }
+  fetchClientes(search.value)
+  if (route.query?.nuevo === 'true') {
+    openForm()
+  }
 })
 
 // Form handling
@@ -319,17 +353,13 @@ const confirmDelete = (cliente) => {
   })
 }
 
-// Navigation placeholders
+// Navegación contextual
 const asociarVehiculo = (cliente) => {
   router.push(`/vehiculos?clienteId=${cliente._id}&nuevo=true`)
 }
 
 const verHistorialVehiculo = (vehiculo) => {
   router.push(`/vehiculos?q=${vehiculo.placa}`)
-}
-
-const verPerfilCliente = (cliente) => {
-  router.push(`/clientes/${cliente._id}`)
 }
 </script>
 

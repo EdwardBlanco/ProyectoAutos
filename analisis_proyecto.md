@@ -142,3 +142,24 @@ export const useAuthStore = defineStore('auth', () => {
 1. **Interceptor de Axios (`src/services/api.js`)**: Ahora obtiene el token directamente del store de Pinia, lo que lo hace más reactivo y centralizado que leer directamente el `localStorage`.
 2. **Guards del Router (`src/router/index.js`)**: Verifica `authStore.token` para bloquear o permitir el acceso a las rutas protegidas.
 3. **Login y Logout**: Modificados para utilizar los actions `setToken` y `clearToken`, delegando a Pinia y a su plugin el guardado/borrado físico del token en el navegador.
+
+---
+
+## 4. Arquitectura y Componentes Reutilizables del Frontend
+
+Para mejorar la mantenibilidad, consistencia visual y reducir el código duplicado en las vistas, se crearon e integraron componentes transversales con pruebas unitarias en Vitest:
+
+1. **`PageHeader.vue`**:
+   - Centraliza el encabezado superior de los módulos (`DashboardPage`, `ClientesPage`, `VehiculosPage`, `OrdenesPage`, `MecanicosPage`).
+   - Normaliza el avatar con icono temático, tipografía de título, badge numérico de registros y slot `#actions` para acciones primarias.
+
+2. **`PlacaBadge.vue`**:
+   - Componente atómico para representar placas vehiculares con formato monoespaciado, sanitización a mayúsculas y variantes (`standard`, `pro` y `outline`).
+   - Soporte nativo para copiar la placa al portapapeles con 1 clic (`copyable`), integrado en tablas, listas y fichas de detalle 360°.
+
+3. **`KpiCard.vue`**:
+   - Componente de visualización métrica con microanimación de elevación hover.
+   - Utilizado en `DashboardPage` y `MecanicosPage` para mostrar cifras clave, avatares temáticos, estados comparativos y valoraciones con iconos.
+
+> Para especificaciones detalladas de Props, Slots y Eventos, consultar [Documentación de Componentes Frontend](Fronted/docs/componentes_frontend.md).
+

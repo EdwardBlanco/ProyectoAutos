@@ -3,114 +3,135 @@
     <div class="page-shell">
 
 
-      <!-- 1. TITULO -->
-      <h1 class="text-h4 text-weight-bolder q-my-none text-dark tracking-tight q-mb-md">Equipo Técnico</h1>
+      <!-- 1. HEADER (TITULO & ACCION) -->
+      <PageHeader
+        title="Equipo Técnico"
+        subtitle="Gestión de mecánicos, asignación de órdenes y control de capacidad del taller"
+        icon="engineering"
+        icon-bg="purple-1"
+        icon-color="primary"
+        :badge="`${mecanicos.length} Especialistas`"
+      >
+        <template #actions>
+          <q-btn
+            color="primary"
+            icon="engineering"
+            label="Nuevo Mecánico"
+            unelevated
+            class="rounded-button shadow-2 q-px-lg q-py-sm text-weight-bold transition-all hover-scale"
+            no-caps
+            @click="openForm()"
+          />
+        </template>
+      </PageHeader>
 
-      <!-- 2. BOTON "+" -->
-      <div class="row q-gutter-x-sm q-mb-md">
-        <q-btn v-if="!isCreationOpen" color="primary" icon="engineering" label="Nuevo Mecánico" unelevated
-          class="rounded-button shadow-3 q-px-lg q-py-sm text-weight-bold transition-all hover-scale" no-caps
-          @click="openForm()" />
-
-      </div>
-
-      <!-- 3. INPUT DE BUSQUEDA -->
-      <div class="q-mb-md search-container">
-        <q-input v-model="search" outlined placeholder="Buscar por placa (ej: 8492-KTL), cliente o número de orden..."
-          class="bg-white search-input" dense @update:model-value="onSearch">
-          <template v-slot:prepend>
-            <q-icon name="search" color="grey-6" />
-          </template>
-        </q-input>
-      </div>
-
-      <!-- 4. REGISTRADOS (#) -->
-      <div class="text-subtitle2 text-grey-8 q-mb-md font-medium">
-        Registrados ({{ mecanicos.length }})
+      <!-- 2. INPUT DE BUSQUEDA -->
+      <div class="row items-center justify-between q-mb-md q-col-gutter-md">
+        <div class="col-12 col-md-6 col-lg-5">
+          <q-input
+            v-model="search"
+            outlined
+            placeholder="Buscar por nombre, especialidad o teléfono..."
+            class="bg-white rounded-input shadow-1 w-full"
+            dense
+            @update:model-value="onSearch"
+            clearable
+          >
+            <template v-slot:prepend>
+              <q-icon name="search" color="grey-6" size="18px" />
+            </template>
+          </q-input>
+        </div>
       </div>
 
       <!-- Dashboard Stats -->
       <div class="row q-col-gutter-lg q-mb-xl">
         <!-- Capacidad Total de Taller -->
         <div class="col-12 col-md-6">
-          <q-card flat bordered class="bg-white q-pa-md h-full transition-all hover-up">
-            <div class="text-subtitle2 text-grey-6 text-weight-bold text-uppercase">Capacidad Total de Taller</div>
-            <div class="text-h4 text-weight-bolder text-dark q-my-sm">{{ totalOrdenesActivas }} / {{ totalCapacidadTaller }} órdenes</div>
-            <div class="text-caption text-grey-7 flex items-center text-weight-medium">
-              <q-icon name="info" size="16px" class="q-mr-xs" /> Distribución equilibrada por mecánico
-            </div>
-          </q-card>
+          <KpiCard
+            title="Capacidad Total de Taller"
+            :value="`${totalOrdenesActivas} / ${totalCapacidadTaller} órdenes`"
+            value-class="text-h4"
+            icon="engineering"
+            color="purple-8"
+            color-light="purple-1"
+            subtext="Distribución equilibrada por mecánico"
+            subtext-icon="info"
+            subtext-color="text-grey-7"
+          />
         </div>
         <!-- Evaluación Promedio -->
         <div class="col-12 col-md-6">
-          <q-card flat bordered class="bg-white q-pa-md h-full transition-all hover-up">
-            <div class="text-subtitle2 text-grey-6 text-weight-bold text-uppercase">Calidad de Reparaciones</div>
-            <div class="text-h4 text-weight-bolder text-dark q-my-sm flex items-center">
-              4.8 <q-icon name="star" color="warning" size="28px" class="q-ml-sm" />
-            </div>
-            <div class="text-caption text-positive flex items-center text-weight-medium">
-              <q-icon name="thumb_up" size="16px" class="q-mr-xs" /> Alta satisfacción de los clientes
-            </div>
-          </q-card>
+          <KpiCard
+            title="Calidad de Reparaciones"
+            value="4.8"
+            value-class="text-h4"
+            value-icon="star"
+            value-icon-color="warning"
+            icon="thumb_up"
+            color="green-8"
+            color-light="green-1"
+            subtext="Alta satisfacción de los clientes"
+            subtext-icon="thumb_up"
+            subtext-color="text-positive"
+          />
         </div>
       </div>
 
-      <!-- INLINE WORKBENCH (Formulario de Creación/Edición) -->
-      <transition name="q-transition--slide-down">
-        <div v-if="isCreationOpen" class="q-mb-xl">
-          <q-card flat bordered class="bg-white">
-            <q-card-section class="row items-center justify-between q-pa-md border-bottom bg-grey-1">
-              <div class="row items-center">
-                <q-avatar color="primary" text-color="white" icon="engineering" size="md" class="q-mr-md shadow-2" />
-                <div>
-                  <div class="text-h6 text-bold text-dark">{{ isEditing ? 'Editar Mecánico' : 'Nuevo Mecánico' }}</div>
-                  <div class="text-caption text-grey-6">Gestione la información del personal técnico.</div>
-                </div>
+      <!-- MODAL DIALOG: NUEVO / EDITAR MECÁNICO -->
+      <q-dialog v-model="isCreationOpen" persistent transition-show="scale" transition-hide="scale">
+        <q-card style="width: 760px; max-width: 95vw; border-radius: 16px;" class="bg-white shadow-10 overflow-hidden">
+          <q-card-section class="row items-center justify-between q-pa-md border-bottom bg-grey-1">
+            <div class="row items-center">
+              <q-avatar color="primary" text-color="white" icon="engineering" size="md" class="q-mr-md shadow-2" />
+              <div>
+                <div class="text-h6 text-bold text-dark">{{ isEditing ? 'Editar Mecánico' : 'Nuevo Mecánico' }}</div>
+                <div class="text-caption text-grey-6">Gestione la información del personal técnico.</div>
               </div>
-              <q-btn icon="close" flat round dense color="grey-8" @click="isCreationOpen = false" />
-            </q-card-section>
+            </div>
+            <q-btn icon="close" flat round dense color="grey-8" v-close-popup />
+          </q-card-section>
 
-            <q-card-section class="q-pa-lg">
-              <q-form @submit="saveMecanico" class="row q-col-gutter-lg">
-                <div class="col-12 col-md-6">
-                  <q-input v-model="formData.nombre" label="Nombre Completo *" outlined dense
-                    :rules="[val => !!val || 'Requerido']" class="rounded-input" />
-                </div>
-                <div class="col-12 col-md-6">
-                  <q-input v-model="formData.cedula" label="Cédula/ID *" outlined dense
-                    :rules="[val => !!val || 'Requerido', val => val.length >= 5 || 'Mínimo 5 caracteres']"
-                    class="rounded-input" />
-                </div>
-                <div class="col-12 col-md-4">
-                  <q-input v-model="formData.especialidad" label="Especialidad *" outlined dense
-                    hint="Ej: Motor, Transmisión, Eléctrico" :rules="[val => !!val || 'Requerido']"
-                    class="rounded-input" />
-                </div>
-                <div class="col-12 col-md-4">
-                  <q-input v-model="formData.telefono" label="Teléfono *" outlined dense
-                    :rules="[val => !!val || 'Requerido']" class="rounded-input" />
-                </div>
-                <div class="col-12 col-md-4">
-                  <q-input v-model="formData.correo" label="Correo *" type="email" outlined dense
-                    :rules="[val => !!val || 'Requerido']" class="rounded-input" />
-                </div>
-                <div class="col-12 col-md-4">
-                  <q-input v-model.number="formData.capacidad" label="Capacidad (Órdenes) *" type="number" outlined dense
-                    :rules="[val => !!val || 'Requerido', val => val > 0 || 'Debe ser mayor a 0']" class="rounded-input" />
-                </div>
+          <q-card-section class="q-pa-lg">
+            <q-form @submit="saveMecanico" class="row q-col-gutter-lg">
+              <div class="col-12 col-md-6">
+                <q-input v-model="formData.nombre" label="Nombre Completo *" outlined dense
+                  :rules="[val => !!val || 'Requerido']" class="rounded-input" />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-input v-model="formData.cedula" label="Cédula/ID *" outlined dense
+                  :rules="[val => !!val || 'Requerido', val => val.length >= 5 || 'Mínimo 5 caracteres']"
+                  class="rounded-input" />
+              </div>
+              <div class="col-12 col-md-4">
+                <q-input v-model="formData.especialidad" label="Especialidad *" outlined dense
+                  hint="Ej: Motor, Transmisión, Eléctrico" :rules="[val => !!val || 'Requerido']"
+                  class="rounded-input" />
+              </div>
+              <div class="col-12 col-md-4">
+                <q-input v-model="formData.telefono" label="Teléfono *" outlined dense
+                  :rules="[val => !!val || 'Requerido']" class="rounded-input" />
+              </div>
+              <div class="col-12 col-md-4">
+                <q-input v-model="formData.correo" label="Correo *" type="email" outlined dense
+                  :rules="[val => !!val || 'Requerido']" class="rounded-input" />
+              </div>
+              <div class="col-12 col-md-4">
+                <q-input v-model.number="formData.capacidad" label="Capacidad (Órdenes) *" type="number" outlined dense
+                  :rules="[val => !!val || 'Requerido', val => val > 0 || 'Debe ser mayor a 0']" class="rounded-input" />
+              </div>
 
-                <div class="col-12 text-right q-mt-md">
-                  <q-btn label="Cancelar" color="grey-7" flat @click="isCreationOpen = false"
-                    class="q-mr-md text-weight-bold rounded-button" no-caps />
-                  <q-btn :label="isEditing ? 'Guardar Cambios' : 'Crear Mecánico'" type="submit" color="primary"
-                    unelevated :loading="saving" class="text-weight-bold rounded-button shadow-2 q-px-lg" no-caps
-                    icon="save" />
-                </div>
-              </q-form>
-            </q-card-section>
-          </q-card>
-        </div>
-      </transition>
+              <div class="col-12 text-right q-mt-md">
+                <q-btn label="Cancelar" color="grey-7" flat v-close-popup
+                  class="q-mr-md text-weight-bold rounded-button" no-caps />
+                <q-btn :label="isEditing ? 'Guardar Cambios' : 'Crear Mecánico'" type="submit" color="primary"
+                  unelevated :loading="saving" class="text-weight-bold rounded-button shadow-2 q-px-lg" no-caps
+                  icon="save" />
+              </div>
+            </q-form>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
 
       <!-- Mechanics Cards Grid -->
       <div v-if="loading" class="row justify-center q-pa-xl">
@@ -124,7 +145,7 @@
       </div>
 
       <div v-else class="row q-col-gutter-lg">
-        <div v-for="(mec, index) in mecanicos" :key="mec._id" class="col-12 col-md-6 col-lg-4 d-flex">
+        <div v-for="(mec, index) in mecanicos" :key="mec._id" class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex">
           <q-card flat bordered
             class="mecanico-card bg-white flex flex-col full-width overflow-hidden transition-all hover-up">
 
@@ -197,11 +218,11 @@
                       <div>
                         <div class="row items-center q-mb-xs">
                           <span class="text-primary text-weight-bold q-mr-sm">{{ orden.numeroOrden }}</span>
-                          <q-badge color="dark" class="text-weight-bold placa-badge">{{ orden.vehiculoId?.placa || 'N/A' }}</q-badge>
+                          <PlacaBadge :placa="orden.vehiculoId?.placa" size="sm" />
                         </div>
                         <div class="text-caption text-grey-8">Vehículo Asignado</div>
                       </div>
-                      <q-badge :color="orden.estado === 'Lista para entregar' ? 'positive' : 'orange-8'" class="text-weight-medium">
+                      <q-badge :color="orden.estado === 'Listo para entrega' || orden.estado === 'Entregada' ? 'positive' : 'orange-8'" class="text-weight-medium">
                         {{ orden.estado }}
                       </q-badge>
                     </div>
@@ -228,13 +249,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import { useQuasar } from 'quasar'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import api from '@/services/api'
+import PageHeader from '@/components/PageHeader.vue'
+import PlacaBadge from '@/components/PlacaBadge.vue'
+import KpiCard from '@/components/KpiCard.vue'
 
 const $q = useQuasar()
 const router = useRouter()
+const route = useRoute()
 
 // State
 const mecanicos = ref([])
@@ -334,8 +359,24 @@ const onSearch = (val) => {
   }, 300)
 }
 
+watch(
+  () => route.query.q,
+  (newQ) => {
+    if (newQ !== undefined) {
+      search.value = String(newQ || '')
+      fetchMecanicos(search.value)
+    }
+  }
+)
+
 onMounted(() => {
-  fetchMecanicos()
+  if (route.query?.q) {
+    search.value = String(route.query.q)
+  }
+  fetchMecanicos(search.value)
+  if (route.query?.nuevo === 'true') {
+    openForm()
+  }
 })
 
 // Form handling
@@ -407,11 +448,6 @@ const confirmDelete = (mec) => {
       })
     }
   })
-}
-
-// Navigation placeholders
-const nuevaOrden = () => {
-  router.push('/ordenes?nuevo=true')
 }
 
 const gestionarOrdenes = (mec) => {

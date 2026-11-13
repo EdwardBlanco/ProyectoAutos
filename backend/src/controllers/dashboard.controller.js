@@ -34,7 +34,16 @@ exports.getDashboardData = async (req, res) => {
 
     // 3. Ingresos (suma de mano de obra de las órdenes ENTREGADAS en el periodo)
     const ingresosResult = await Orden.aggregate([
-      { $match: { estado: 'Entregado', fechaEntregaReal: rangoFechas } },
+      {
+        $match: {
+          estado: { $in: ['Entregada', 'Entregado'] },
+          $or: [
+            { fechaEntregaReal: rangoFechas },
+            { fechaEntregaReal: { $exists: false }, fechaIngreso: rangoFechas },
+            { fechaEntregaReal: null, fechaIngreso: rangoFechas }
+          ]
+        }
+      },
       { $group: { _id: null, total: { $sum: '$costoManoObra' } } }
     ]);
     const ingresos = ingresosResult[0]?.total || 0;

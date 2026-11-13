@@ -13,8 +13,8 @@ import router from './router'
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
 
-createApp(App)
-  .use(Quasar, { plugins: { Notify, Dialog } })
-  .use(router)
-  .use(pinia)
-  .mount('#app')
+const app = createApp(App)
+app.use(pinia)
+app.use(router)
+app.use(Quasar, { plugins: { Notify, Dialog } })
+app.mount('#app')

@@ -30,7 +30,7 @@ const siguienteNumeroOrden = async () => {
   const contador = await Contador.findOneAndUpdate(
     { _id: 'orden' },
     { $inc: { seq: 1 } },
-    { returnDocument: 'after', upsert: true }
+    { new: true, upsert: true }
   );
   return `ORD-${contador.seq.toString().padStart(4, '0')}`;
 };

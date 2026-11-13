@@ -13,6 +13,17 @@ let vehiculoId = '';
 let ordenId = '';
 
 describe('Pruebas de Integración (Frontend -> Backend -> DB)', () => {
+  beforeAll(() => {
+    global.__PRESERVE_DB__ = true;
+  });
+
+  afterAll(async () => {
+    global.__PRESERVE_DB__ = false;
+    const collections = mongoose.connection.collections;
+    for (const key in collections) {
+      await collections[key].deleteMany();
+    }
+  });
 
   describe('1. Autenticación', () => {
     it('debe registrar un usuario', async () => {
@@ -113,7 +124,7 @@ describe('Pruebas de Integración (Frontend -> Backend -> DB)', () => {
       expect(res.statusCode).toEqual(201);
       expect(res.body.placa).toEqual(payload.placa);
       expect(res.body.anio).toEqual(payload.anio);
-      expect(res.body.clienteId).toEqual(clienteId);
+      expect(res.body.clienteId?._id || res.body.clienteId).toEqual(clienteId);
       vehiculoId = res.body._id;
     });
 
@@ -150,7 +161,7 @@ describe('Pruebas de Integración (Frontend -> Backend -> DB)', () => {
         mecanicoId: mecanicoId,
         fechaEntregaEstimada: new Date().toISOString().split('T')[0],
         descripcionFalla: 'El carro no frena bien',
-        estado: 'Recepción',
+        estado: 'En diagnóstico',
         costoManoObra: 0
       };
       const res = await request(app)
@@ -159,8 +170,8 @@ describe('Pruebas de Integración (Frontend -> Backend -> DB)', () => {
         .send(payload);
 
       expect(res.statusCode).toEqual(201);
-      expect(res.body.vehiculoId).toEqual(vehiculoId);
-      expect(res.body.estado).toEqual('Recepción');
+      expect(res.body.vehiculoId?._id || res.body.vehiculoId).toEqual(vehiculoId);
+      expect(res.body.estado).toEqual('En diagnóstico');
       ordenId = res.body._id;
     });
 
@@ -179,7 +190,7 @@ describe('Pruebas de Integración (Frontend -> Backend -> DB)', () => {
         mecanicoId: mecanicoId,
         fechaEntregaEstimada: new Date().toISOString().split('T')[0],
         descripcionFalla: 'El carro no frena bien',
-        estado: 'Diagnóstico', // Cambio de estado
+        estado: 'En reparación', // Cambio de estado
         costoManoObra: 50
       };
       
@@ -189,7 +200,7 @@ describe('Pruebas de Integración (Frontend -> Backend -> DB)', () => {
         .send(updatePayload);
 
       expect(res.statusCode).toEqual(200);
-      expect(res.body.estado).toEqual('Diagnóstico');
+      expect(res.body.estado).toEqual('En reparación');
       expect(res.body.costoManoObra).toEqual(50);
     });
   });

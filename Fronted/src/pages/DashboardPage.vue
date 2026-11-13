@@ -3,16 +3,26 @@
     <div class="page-shell max-width-1440 q-mx-auto">
 
       <!-- HEADER & QUICK ACTIONS -->
-      <div class="row items-center justify-between q-mb-xl">
-        <div>
-          <h1 class="text-h4 text-weight-bolder q-my-none text-dark tracking-tight">Panel de Control</h1>
-          <div class="text-subtitle1 text-grey-7 q-mt-xs">Resumen general y métricas clave del taller</div>
-        </div>
-        <div class="row q-gutter-sm">
-          <q-btn to="/ordenes" color="primary" icon="add" label="Nueva Orden" unelevated class="text-weight-bold"
-            style="border-radius: 8px" />
-        </div>
-      </div>
+      <PageHeader
+        title="Panel de Control"
+        subtitle="Resumen general y métricas de desempeño del taller automotriz"
+        icon="grid_view"
+        icon-bg="red-1"
+        icon-color="primary"
+        custom-class="q-mb-xl"
+      >
+        <template #actions>
+          <q-btn
+            :to="{ path: '/ordenes', query: { nuevo: 'true' } }"
+            color="primary"
+            icon="add"
+            label="Nueva Orden"
+            unelevated
+            no-caps
+            class="rounded-button shadow-2 q-px-lg q-py-sm text-weight-bold transition-all hover-scale"
+          />
+        </template>
+      </PageHeader>
 
       <!-- FILTER -->
       <div class="row justify-end q-mb-md">
@@ -36,22 +46,16 @@
         <!-- KPI CARDS -->
         <div class="row q-col-gutter-lg q-mb-xl">
           <div v-for="card in metrics" :key="card.title" class="col-12 col-sm-6 col-md-3">
-            <q-card flat bordered class="kpi-card bg-white transition-hover" style="border-radius: 16px;">
-              <q-card-section class="q-pa-lg">
-                <div class="row items-center justify-between q-mb-md">
-                  <div class="text-subtitle2 text-grey-6 text-uppercase text-weight-bold">{{ card.title }}</div>
-                  <q-avatar :color="card.colorLight" :text-color="card.color" size="42px" class="shadow-1">
-                    <q-icon :name="card.icon" size="20px" />
-                  </q-avatar>
-                </div>
-                <div class="text-h3 text-weight-bolder text-dark q-mb-xs">{{ card.value }}</div>
-                <div class="text-caption text-weight-medium row items-center"
-                  :class="card.subtextColor || 'text-grey-6'">
-                  <q-icon v-if="card.subtextIcon" :name="card.subtextIcon" size="14px" class="q-mr-xs" />
-                  {{ card.subtext || (diasFiltro === 0 ? 'Día de hoy' : `Últimos ${diasFiltro} días`) }}
-                </div>
-              </q-card-section>
-            </q-card>
+            <KpiCard
+              :title="card.title"
+              :value="card.value"
+              :icon="card.icon"
+              :color="card.color"
+              :color-light="card.colorLight"
+              :subtext="card.subtext || (diasFiltro === 0 ? 'Día de hoy' : `Últimos ${diasFiltro} días`)"
+              :subtext-icon="card.subtextIcon"
+              :subtext-color="card.subtextColor"
+            />
           </div>
         </div>
 
@@ -172,6 +176,8 @@
 import { ref, computed, onMounted } from 'vue'
 import api from '@/services/api'
 import { useQuasar } from 'quasar'
+import PageHeader from '@/components/PageHeader.vue'
+import KpiCard from '@/components/KpiCard.vue'
 
 const $q = useQuasar()
 const loading = ref(true)
@@ -260,13 +266,18 @@ const estadoOrdenesData = computed(() => {
   if (total === 0) return []
 
   const colors = {
+    'En diagnóstico': 'orange-8',
+    'Pendiente de aprobación': 'amber-8',
+    'Esperando repuestos': 'red-8',
+    'En reparación': 'blue-8',
+    'Listo para entrega': 'teal-8',
+    'Entregada': 'positive',
+    'Cancelada': 'negative',
+    // Fallback retrocompatibilidad
     'Recepción': 'blue',
-    'En diagnóstico': 'orange',
     'Presupuestado': 'cyan',
-    'En reparación': 'warning',
-    'En control de calidad': 'purple',
-    'Listo': 'positive',
-    'Entregado': 'grey'
+    'Listo': 'teal-8',
+    'Entregado': 'positive'
   }
 
   const items = []
